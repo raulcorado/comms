@@ -1,0 +1,104 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+Created on : Jul 17, 2016, 1:33:17 PM
+Author     : raul
+*/
+
+@-webkit-keyframes aaa {
+      from {
+            -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+            visibility: visible;
+      }
+
+      to {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+      }
+}
+
+@keyframes aaa {
+      from {
+            -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+            visibility: visible;
+      }
+      to {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+      }
+}
+
+.panel {
+      /*animation-name: aaa;
+      animation-fill-mode: both;
+      animation-duration: .3s;*/
+}
+
+body {
+      padding-top: 80px;
+      /*    background-color: #f2f2f2;   */
+}
+
+.glyphicon {
+      padding-right: 8px;
+}
+
+.nav-tabs {
+      border-bottom: none;
+      padding-bottom: -10px;
+}
+
+.panel-default {
+      box-shadow: 0px 30px 80px black;
+      /*border-color: #999999;*/
+}
+
+.panel {
+      border-width: 2px;
+}
+
+.panel-heading {
+      border-radius: 0px;
+}
+
+.form-control, .btn, .panel, .alert {
+      border-radius: 2px;
+}
+
+.table-condensed > thead > tr > th,
+.table-condensed > tbody > tr > th,
+.table-condensed > tfoot > tr > th,
+.table-condensed > thead > tr > td,
+.table-condensed > tbody > tr > td,
+.table-condensed > tfoot > tr > td {
+      padding: 2px;
+      font-size: 12px;
+}
+
+.table-condensed > thead > tr > th,
+.table-condensed > tfoot > tr > th,
+.table-condensed > thead > tr > td,
+.table-condensed > tfoot > tr > td {
+      background-color:  #e6e6e6;
+      padding: 4px;
+}
+
+.nowrap > tbody > tr > td{
+      white-space: nowrap;
+}
+.tab-pane {
+      padding-top: 10px;
+}
+
+.c3-chart-arcs-title{
+      font-size-adjust: inherit;
+}
+
+.c3-chart-arcs {
+      stroke-width: 0px;
+}
