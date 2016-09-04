@@ -1,7 +1,7 @@
 <?php
 
 include 'secure.php';
-include 'conection.php';
+include 'app/conection.php';
 //header("Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
 header("Content-Type: application/vnd.ms-excel");
 header("Content-Disposition: attachment;filename=filename.csv");
@@ -26,6 +26,4 @@ while ($row = mysqli_fetch_row($result)) {
 }
 echo "\n";
 echo date('Y') . "Plan Guatemala - Aplicación " . $miapp;
-?> 
-
-
+?>

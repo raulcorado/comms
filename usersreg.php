@@ -1,7 +1,7 @@
 <?php
 // include 'secure.php';
-include 'mivar.php';
-include 'connection.php';
+include 'app/mivar.php';
+include 'app/connection.php';
 
 if (isset($_GET[msg])) {
       $msg = "<p class='text-danger'><span class='glyphicon glyphicon-bell' aria-hidden='true'></span>$_GET[msg]</p>";

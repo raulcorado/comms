@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
-include ("mivar.php");
-include "fnc/functions.php";
+include 'app/mivar.php';
+include 'fnc/functions.php';
 ?>
 <html>
 <head>

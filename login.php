@@ -1,8 +1,8 @@
 <?php
 //no incluir secure.php nunca aqui, ni tampoco ninguna impresion html
 session_start();
-include 'mivar.php';
-include 'connection.php';
+include 'app/mivar.php';
+include 'app/connection.php';
 
 //if ($_SERVER["SERVER_ADDR"] != "10.32.36.14") {
 //    header('Location:http://10.32.36.14/boleta');

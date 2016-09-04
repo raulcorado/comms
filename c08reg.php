@@ -1,6 +1,6 @@
 <?php
 include 'secure.php';
-include 'connection.php';
+include 'app/connection.php';
 
 $permit=3;
 // 1 admin

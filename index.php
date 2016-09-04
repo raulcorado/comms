@@ -1,7 +1,7 @@
 <?php
 include 'secure.php';
 include 'header.php';
-include 'connection.php';
+include 'app/connection.php';
 ?>
 
 
