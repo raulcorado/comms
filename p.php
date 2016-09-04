@@ -1,8 +1,8 @@
 <?php
 include 'secure.php';
-include "header.php";
 include "connection.php"
-include "functions.php";
+
+include "header.php";
 ?>
 
 

@@ -1,7 +1,7 @@
 <?php
 
 /*
-convierte $gquery en una tabla cruzada
+convierte $gquery en una query cruzada
 $field1 son las filas y $field2 seran tantas columnas como datos diferentes encuentre
 si $field2=TOTAL no se hará la separacion de las columnas
 $tot=1 incluira fila y columna de totales al final

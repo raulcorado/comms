@@ -113,7 +113,6 @@ $(document).ready(function () {
                                           <?php
                                     }
                                     ?>
-
                               </tbody>
                         </table>
                   </div>
@@ -137,10 +136,8 @@ $(document).ready(function () {
                                           <th>NOMBRE</th>
                                           <th>RECIBIDO</th>
                                           <th>F-LÍMITE</th>
-
                                           <th>ESTATUS</th>
                                           <th></th>
-
                                     </tr>
                               </thead>
                               <tbody>

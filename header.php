@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 include ("mivar.php");
+include "fnc/functions.php";
 ?>
 <html>
 <head>
@@ -10,7 +11,7 @@ include ("mivar.php");
       <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=0.3" />
 
       <title><?php echo MIAPP ?></title>
-      
+
 
       <link href="css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
       <link href="css/c3.min.css" rel="stylesheet" type="text/css"/>

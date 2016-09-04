@@ -3,12 +3,10 @@ include 'secure.php';
 include "header.php";
 ?>
 <div class="text-info">
-
      <p>
           <span class="glyphicon glyphicon-exclamation-sign"></span>
-          Su usuario no tiene acceso a este módulo
+          Ninguna información que mostrar
      </p>
-
 </div>
 
 <?php
