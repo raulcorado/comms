@@ -56,27 +56,17 @@ include 'header.php';
                               <h4 class="text-center"><strong>ESTATUS DE CARTAS</strong></h4>
                               <table class="table table-condensed table-hover table-striped table-bordered">
                                     <?php
-                                    $gquery="select puname `UP`, est from generalcomms " . $_SESSION[filtro];
-                                    $field1="UP";
-                                    $field2="est";
-                                    $tot=1; //columna totales
-                                    include 'fnc/cross.php';
-                                    include 'fnc/tcontent.php';
+                                    echo _TCONTENT(_CROSS("select puname `UP`, est from generalcomms " . $_SESSION[filtro], "UP", "est", 1));
                                     ?>
                               </table>
                         </div>
                         <div class="col-md-6">
                               <h4 class="text-center"><strong>ESTATUS DE CARTAS</strong></h4>
                               <?php
-                              $id="g01";
-                              // SERIAL INICIO
                               $gquery = "select puname, est from generalcomms " . $_SESSION[filtro];
-                              $field1 = "puname";
-                              $field2 = "est";
-                              include 'fnc/serial.php';
-                              // SERIAL FINAL
                               $pattern="'#f6511d','#00a6ed','#ffb400','#7fb800','#0d2c54'";
-                              include "gbar.php";
+                              $data=_SERIAL($gquery, "puname", "est", 1);
+                              _CHART($data[0], $data[1], "puname", "bar", $pattern);
                               ?>
                         </div>
                   </div>
@@ -100,42 +90,24 @@ include 'header.php';
                               <h4 class="text-center"><strong>PARTICIPACION DEL SC</strong></h4>
                               <table class="table table-condensed table-hover table-striped table-bordered">
                                     <?php
-                                    // CROSS INICIO
-                                    $gquery="select puname `UP`, p_participosc `PARTICIPO_SC` from generalcontrol " . $_SESSION[filtro];
-                                    $field1="UP";
-                                    $field2="PARTICIPO_SC";
-                                    $tot=1; //columna totales
-                                    include 'fnc/cross.php';
-                                    // CROSS FINAL
-                                    //TCONTENT INICIO
-                                    include 'fnc/tcontent.php';
-                                    //TCONTENT FINAL
+                                    echo _TCONTENT(_CROSS("select puname `UP`, p_participosc `PARTICIPO_SC` from generalcontrol " . $_SESSION[filtro], "UP", "PARTICIPO_SC", 1));
                                     ?>
                               </table>
                         </div>
                         <div class="col-md-4">
                               <h4 class="text-center"><strong>PARTICIPACION DEL SC</strong></h4>
                               <?php
-                              $id="g02";
-                              // SERIAL INICIO
                               $gquery = "select puname `UP`, p_participosc from generalcontrol " . $_SESSION[filtro];
-                              $field1 = "UP";
-                              $field2 = "p_participosc";
-                              include 'fnc/serial.php';
-                              // SERIAL FINAL
-                              include "gbar.php";
+                              $data=_SERIAL($gquery, "UP", "p_participosc", 1);
+                              _CHART($data[0], $data[1], "UP", "bar", $pattern);
                               ?>
                         </div>
                         <div class="col-md-4">
                               <h4 class="text-center"><strong>DETALLE</strong></h4>
                               <?php
-                              $id="g03";
-                              //S-SERIAL INICIO
                               $gquery = "select puname `UP`, sum(p_dibujo) DIBUJO, sum(p_carta) CARTA, sum(p_huella) HUELLA from generalcontrol " . $_SESSION[filtro] . " group by 1";
-                              $field1 = "UP";
-                              include 'fnc/sserial.php';
-                              //S-SERIAL FINAL
-                              include "gbar.php";
+                              $data=_SERIAL($gquery, "UP", "", 0);
+                              _CHART($data[0], $data[1], "UP", "bar", $pattern);
                               ?>
                         </div>
                   </div>
@@ -158,44 +130,26 @@ include 'header.php';
                               <h4 class="text-center"><strong>DIALOGO VALIOSO</strong></h4>
                               <table class="table table-condensed table-hover table-striped table-bordered">
                                     <?php
-                                    // CROSS INICIO
-                                    $gquery="select puname `UP`, d_dialogovalioso from generalcontrol  " . $_SESSION[filtro];
-                                    $field1="UP";
-                                    $field2="d_dialogovalioso";
-                                    $tot=1; //columna totales
-                                    include 'fnc/cross.php';
-                                    // CROSS FINAL
-                                    //TCONTENT INICIO
-                                    include 'fnc/tcontent.php';
-                                    //TCONTENT FINAL
+                                    echo _TCONTENT(_CROSS("select puname `UP`, d_dialogovalioso from generalcontrol  " . $_SESSION[filtro], "UP", "d_dialogovalioso", 1));
                                     ?>
                               </table>
                         </div>
                         <div class="col-md-4">
                               <h4 class="text-center"><strong>DIALOGO VALIOSO</strong></h4>
                               <?php
-                              $id="g04";
-                              // SERIAL INICIO
                               $gquery = "select puname `UP`, d_dialogovalioso from generalcontrol " . $_SESSION[filtro];
-                              $field1 = "UP";
-                              $field2 = "d_dialogovalioso";
-                              include 'fnc/serial.php';
-                              // SERIAL FINAL
                               $pattern="'#6699cc','#ff8c42','#ff3c38','#a23e48','#fff275'";
-                              include "gbar.php";
+                              $data=_SERIAL($gquery, "UP", "d_dialogovalioso", 1);
+                              _CHART($data[0], $data[1], "UP", "bar", $pattern);
                               ?>
                         </div>
                         <div class="col-md-4">
                               <h4 class="text-center"><strong>DETALLE</strong></h4>
                               <?php
-                              $id="g05";
-                              //S-SERIAL INICIO
                               $gquery = "select puname `UP`, sum(d_foto) FOTO, sum(d_resppreguntas) RESP_PREGUNTAS, sum(d_hacepreguntas) HACE_PREGUNTAS, sum(d_cuentafamcomuni) CUENTA_FAM_COMUNI, sum(d_mencionaproyectos) MENCIONA_PROY   from generalcontrol " . $_SESSION[filtro] . " group by 1";
-                              $field1 = "UP";
-                              include 'fnc/sserial.php';
-                              //S-SERIAL FINAL
                               $pattern="'#6699cc','#ff8c42','#ff3c38','#a23e48','#fff275'";
-                              include "gbar.php";
+                              $data=_SERIAL($gquery, "UP", "", 0);
+                              _CHART($data[0], $data[1], "UP", "bar", $pattern);
                               ?>
                         </div>
                   </div>
@@ -217,62 +171,34 @@ include 'header.php';
                               <h4 class="text-center"><strong>QUIEN ESCRIBE LA CARTA</strong></h4>
                               <table class="table table-condensed table-hover table-striped table-bordered">
                                     <?php
-                                    // CROSS INICIO
-                                    $gquery="select puname `UP`, c_quienescribiocarta from generalcontrol  " . $_SESSION[filtro];
-                                    $field1="UP";
-                                    $field2="c_quienescribiocarta";
-                                    $tot=1; //columna totales
-                                    include 'fnc/cross.php';
-                                    // CROSS FINAL
-                                    //TCONTENT INICIO
-                                    include 'fnc/tcontent.php';
-                                    //TCONTENT FINAL
+                                    echo _TCONTENT(_CROSS("select puname `UP`, c_quienescribiocarta from generalcontrol  " . $_SESSION[filtro], "UP", "c_quienescribiocarta", 1));
                                     ?>
                               </table>
                         </div>
                         <div class="col-md-4">
                               <h4 class="text-center"><strong>QUIEN ESCRIBE LA CARTA</strong></h4>
                               <?php
-                              $id="g06";
-                              // SERIAL INICIO
                               $gquery = "select puname `UP`, c_quienescribiocarta from generalcontrol " . $_SESSION[filtro];
-                              $field1 = "UP";
-                              $field2 = "c_quienescribiocarta";
-                              include 'fnc/serial.php';
-                              // SERIAL FINAL
                               $pattern="'#4d9de0','#e15554','#e1bc29','#3bb273','#7768ae'";
-                              include "gbar.php";
+                              $data=_SERIAL($gquery, "UP", "c_quienescribiocarta", 1);
+                              _CHART($data[0], $data[1], "UP", "bar", $pattern);
                               ?>
                         </div>
 
                         <div class="col-md-4">
                               <h4 class="text-center"><strong>CONTENIDO INAPROPIADO</strong></h4>
                               <?php
-                              $id="g07";
-                              // SERIAL INICIO
                               $gquery = "select puname `UP`, i_contenidoinaprop from generalcontrol " . $_SESSION[filtro];
-                              $field1 = "UP";
-                              $field2 = "i_contenidoinaprop";
-                              include 'fnc/serial.php';
-                              // SERIAL FINAL
                               $pattern="'#541388','#d90368','#f1e9da','#2e294e','#ffd400'";
-                              include "gbar.php";
+                              $data=_SERIAL($gquery, "UP", "i_contenidoinaprop", 1);
+                              _CHART($data[0], $data[1], "UP", "bar", $pattern);
                               ?>
                         </div>
                         <div class="col-md-4">
                               <h4 class="text-center"><strong>CONTENIDO INAPROPIADO</strong></h4>
                               <table class="table table-condensed table-hover table-striped table-bordered">
                                     <?php
-                                    // CROSS INICIO
-                                    $gquery="select puname `UP`, i_contenidoinaprop from generalcontrol  " . $_SESSION[filtro];
-                                    $field1="UP";
-                                    $field2="i_contenidoinaprop";
-                                    $tot=1; //columna totales
-                                    include 'fnc/cross.php';
-                                    // CROSS FINAL
-                                    //TCONTENT INICIO
-                                    include 'fnc/tcontent.php';
-                                    //TCONTENT FINAL
+                                    echo _TCONTENT(_CROSS("select puname `UP`, i_contenidoinaprop from generalcontrol  " . $_SESSION[filtro], "UP", "i_contenidoinaprop", 1));
                                     ?>
                               </table>
                         </div>
@@ -304,16 +230,7 @@ include 'header.php';
                                     <h4><span class="glyphicon glyphicon-paperclip"></span><?php echo strtoupper($row1[puname])?> </h4>
                                     <table class="table table-condensed table-hover table-striped table-bordered table-responsive">
                                           <?php
-                                          // CROSS INICIO
-                                          $gquery="select left(facilita,20) FDC, est from generalcomms " . $_SESSION[filtro] . " and puname='" . $row1[puname] . "'";
-                                          $field1="FDC";
-                                          $field2="est";
-                                          $tot=1; //columna totales
-                                          include 'fnc/cross.php';
-                                          // CROSS FINAL
-                                          //TCONTENT INICIO
-                                          include 'fnc/tcontent.php';
-                                          //TCONTENT FINAL
+                                          echo _TCONTENT(_CROSS("select left(facilita,20) FDC, est from generalcomms " . $_SESSION[filtro] . " and puname='" . $row1[puname] . "'", "FDC", "est", 1));
                                           ?>
                                     </table>
                                     <br>
