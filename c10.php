@@ -2,7 +2,6 @@
 include 'secure.php';
 include 'app/connection.php';
 
-
 $permit=4;
 // 1 admin
 // 2 super user <<<<<<
@@ -15,13 +14,13 @@ if ($_SESSION[rolid]>$permit) {
 if (isset($_POST[enviar])) {
       $_SESSION[mes] = $_POST[mes];
       $_SESSION[filtro]="where date_format(duebefore,'%Y-%m')='$_SESSION[mes]'";
-      header("Location:c08");
+      header("Location:c10");
 }
 
 include("header.php");
-
-_DATATABLE('#tablatodo');
+_DATATABLE('#tablac10');
 ?>
+
 
 <div class="row">
       <div class="col-lg-3">
@@ -99,7 +98,7 @@ _DATATABLE('#tablatodo');
                         </h3>
                   </div>
                   <div class="panel-body ">
-                        <table class="table table-condensed table-hover table-striped nowrap" id="tablatodo" width="100%">
+                        <table class="table table-condensed table-hover table-striped nowrap" id="tablac10" width="100%">
                               <thead>
                                     <tr>
                                           <th>SC</th>

@@ -12,7 +12,6 @@ include 'fnc/functions.php';
 
       <title><?php echo MIAPP ?></title>
 
-
       <link href="css/dataTables.bootstrap.min.css" rel="stylesheet" type="text/css"/>
       <link href="css/c3.min.css" rel="stylesheet" type="text/css"/>
       <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -36,7 +35,6 @@ include 'fnc/functions.php';
             $('[data-toggle="tooltip"]').tooltip()
       })
       </script>
-
 
 </head>
 <body>
@@ -94,8 +92,6 @@ include 'fnc/functions.php';
                         </div>
                   </div>
             </nav>
-
-
 
             <a href="./"><img src="img/logo.png" width="200px" alt=""/></a>
 

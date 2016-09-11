@@ -1,4 +1,52 @@
 <?php
+
+function _AUT($roles, $groups) {
+      $permit=4;
+      // 1 admin
+      // 2 super user <<<<<<
+      // 3 usuario
+      // 4 visitante
+      if ($_SESSION[rolid]>$permit) {
+            header("Location:403");
+      }
+}
+
+
+function _DATATABLE($table) {
+      ?>
+      <script type="text/javascript">
+      $(document).ready(function () {
+            $('<?php echo $table ?>').DataTable({
+                  "paging": true,
+                  "lengthMenu": [[50, 100, 500, -1], [50, 100, 500, "TODOS"]],
+                  "pageLength": 100,
+                  // "order": [[0, "desc"]],
+                  // "scrollX": true,
+                  "info": true,
+                  "stateSave": true,
+                  "pagingType": "full",
+                  "deferRender": true,
+                  "language": {
+                        "lengthMenu": "_MENU_",
+                        "zeroRecords": "NADA QUE MOSTRAR",
+                        "search":         "",
+                        "paginate": {
+                              "first":      "PRIM",
+                              "last":       "ULTM",
+                              "next":       "SIG",
+                              "previous":   "ANT"
+                        },
+                        "infoEmpty": "NADA QUE MOSTRAR",
+                        "info": "DEL _START_ AL _END_ = _TOTAL_ REGISTROS",
+                        "infoFiltered": "(TOTAL _MAX_ REGISTROS)"
+                  },
+            });
+      });
+      </script>
+      <?php
+}
+
+
 function _CROSS($gquery, $field1, $field2, $tot) {
       /*
       regresa $gquery en una query cruzada

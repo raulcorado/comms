@@ -173,7 +173,7 @@ if (isset($_POST['submitsc'])) {
             $e = 0;
             $i = 0;
             $s = 0;
-            set_time_limit(0);
+            set_time_limit(0);            
             while (($data = fgetcsv($handle, 1000, ",")) !== false) {
 
                   $comtypearray=array("F","M");
@@ -181,8 +181,15 @@ if (isset($_POST['submitsc'])) {
                         for ($j=0; $j <=8 ; $j++) {
                               $data[$j] = preg_replace('/[^À-ÿA-z0-9áéíóúñÑ\s.%\/]/', '-', $data[$j]);
                         }
+                        if (strlen($data[0])>3) {
+                              $scstatus = strtoupper($data[0]);
+                        } else {
+                              $scstatus = 'CANCELADO';
+                        }
+
+                        ($data[0]);
                         $query="replace into `scactive` (`SC Status`, `SC Number`, `SC Name`, `Gender`,   `DOB`,                                `Afiliation Level Name`, `CW`,       `PU Code`,  `PU Name`) VALUES "
-                        ."                              ('$data[0]',   $data[1],   '$data[2]', '$data[3]', STR_TO_DATE('$data[4]', '%d/%m/%Y'), '$data[5]',              '$data[6]', '$data[7]', '$data[8]')";
+                        ."                              ('$scstatus',   $data[1],   '$data[2]', '$data[3]', STR_TO_DATE('$data[4]', '%d/%m/%Y'), '$data[5]',              '$data[6]', '$data[7]', '$data[8]')";
                         $result = mysqli_query($link, $query);
 
                         if (!$result) {
