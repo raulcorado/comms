@@ -7,7 +7,6 @@ include 'app/connection.php';
 
 if (isset($_POST[enviar])) {
       $_SESSION[mes] = $_POST[mes];
-      $_SESSION[filtro]="where date_format(duebefore,'%Y-%m')='$_SESSION[mes]'";
       //  header("Location:c08");
 }
 
@@ -15,9 +14,9 @@ if (isset($_POST[enviar])) {
 include 'header.php';
 ?>
 
-<h1>Cuadro de mando</h1>
+<!-- <h1>Cuadro de mando</h1>
 <h4>CARTAS</h4>
-<hr>
+<hr> -->
 <div class="col-xs-2 col-xs-offset-10">
       <form role="form" action="c08dashboard" method="post"  class="form-horizontal">
             <div class="form-group">
@@ -56,14 +55,14 @@ include 'header.php';
                               <h4 class="text-center"><strong>ESTATUS DE CARTAS</strong></h4>
                               <table class="table table-condensed table-hover table-striped table-bordered">
                                     <?php
-                                    echo _TCONTENT(_CROSS("select puname `UP`, est from generalcomms " . $_SESSION[filtro], "UP", "est", 1));
+                                    echo _TCONTENT(_CROSS("select puname `UP`, est from generalcomms where date_format(duebefore,'%Y-%m')='$_SESSION[mes]'", "UP", "est", 1));
                                     ?>
                               </table>
                         </div>
                         <div class="col-md-6">
                               <h4 class="text-center"><strong>ESTATUS DE CARTAS</strong></h4>
                               <?php
-                              $gquery = "select puname, est from generalcomms " . $_SESSION[filtro];
+                              $gquery = "select puname, est from generalcomms where date_format(duebefore,'%Y-%m')='$_SESSION[mes]'";
                               $pattern="'#f6511d','#00a6ed','#ffb400','#7fb800','#0d2c54'";
                               $data=_SERIAL($gquery, "puname", "est", 1);
                               _CHART($data[0], $data[1], "puname", "bar", $pattern);
@@ -78,7 +77,7 @@ include 'header.php';
 
 <div class="row">
       <div class="col-md-12">
-            <div class="panel panel-success">
+            <div class="panel panel-primary">
                   <div class="panel-heading">
                         <h3 class="panel-title"><span class="glyphicon glyphicon-paperclip"></span>
                               PARTICIPACION DEL SC
@@ -90,14 +89,14 @@ include 'header.php';
                               <h4 class="text-center"><strong>PARTICIPACION DEL SC</strong></h4>
                               <table class="table table-condensed table-hover table-striped table-bordered">
                                     <?php
-                                    echo _TCONTENT(_CROSS("select puname `UP`, p_participosc `PARTICIPO_SC` from generalcontrol " . $_SESSION[filtro], "UP", "PARTICIPO_SC", 1));
+                                    echo _TCONTENT(_CROSS("select puname `UP`, p_participosc `PARTICIPO_SC` from generalcontrol where date_format(duebefore,'%Y-%m')='$_SESSION[mes]'", "UP", "PARTICIPO_SC", 1));
                                     ?>
                               </table>
                         </div>
                         <div class="col-md-4">
                               <h4 class="text-center"><strong>PARTICIPACION DEL SC</strong></h4>
                               <?php
-                              $gquery = "select puname `UP`, p_participosc from generalcontrol " . $_SESSION[filtro];
+                              $gquery = "select puname `UP`, p_participosc from generalcontrol where date_format(duebefore,'%Y-%m')='$_SESSION[mes]'";
                               $data=_SERIAL($gquery, "UP", "p_participosc", 1);
                               _CHART($data[0], $data[1], "UP", "bar", $pattern);
                               ?>
@@ -105,7 +104,7 @@ include 'header.php';
                         <div class="col-md-4">
                               <h4 class="text-center"><strong>DETALLE</strong></h4>
                               <?php
-                              $gquery = "select puname `UP`, sum(p_dibujo) DIBUJO, sum(p_carta) CARTA, sum(p_huella) HUELLA from generalcontrol " . $_SESSION[filtro] . " group by 1";
+                              $gquery = "select puname `UP`, sum(p_dibujo) DIBUJO, sum(p_carta) CARTA, sum(p_huella) HUELLA from generalcontrol where date_format(duebefore,'%Y-%m')='$_SESSION[mes]' group by 1";
                               $data=_SERIAL($gquery, "UP", "", 0);
                               _CHART($data[0], $data[1], "UP", "bar", $pattern);
                               ?>
@@ -118,7 +117,7 @@ include 'header.php';
 
 <div class="row">
       <div class="col-md-12">
-            <div class="panel panel-warning">
+            <div class="panel panel-primary">
                   <div class="panel-heading">
                         <h3 class="panel-title"><span class="glyphicon glyphicon-paperclip"></span>
                               DIALOGO VALIOSO
@@ -130,14 +129,14 @@ include 'header.php';
                               <h4 class="text-center"><strong>DIALOGO VALIOSO</strong></h4>
                               <table class="table table-condensed table-hover table-striped table-bordered">
                                     <?php
-                                    echo _TCONTENT(_CROSS("select puname `UP`, d_dialogovalioso from generalcontrol  " . $_SESSION[filtro], "UP", "d_dialogovalioso", 1));
+                                    echo _TCONTENT(_CROSS("select puname `UP`, d_dialogovalioso from generalcontrol  where date_format(duebefore,'%Y-%m')='$_SESSION[mes]'", "UP", "d_dialogovalioso", 1));
                                     ?>
                               </table>
                         </div>
                         <div class="col-md-4">
                               <h4 class="text-center"><strong>DIALOGO VALIOSO</strong></h4>
                               <?php
-                              $gquery = "select puname `UP`, d_dialogovalioso from generalcontrol " . $_SESSION[filtro];
+                              $gquery = "select puname `UP`, d_dialogovalioso from generalcontrol where date_format(duebefore,'%Y-%m')='$_SESSION[mes]'";
                               $pattern="'#6699cc','#ff8c42','#ff3c38','#a23e48','#fff275'";
                               $data=_SERIAL($gquery, "UP", "d_dialogovalioso", 1);
                               _CHART($data[0], $data[1], "UP", "bar", $pattern);
@@ -146,7 +145,7 @@ include 'header.php';
                         <div class="col-md-4">
                               <h4 class="text-center"><strong>DETALLE</strong></h4>
                               <?php
-                              $gquery = "select puname `UP`, sum(d_foto) FOTO, sum(d_resppreguntas) RESP_PREGUNTAS, sum(d_hacepreguntas) HACE_PREGUNTAS, sum(d_cuentafamcomuni) CUENTA_FAM_COMUNI, sum(d_mencionaproyectos) MENCIONA_PROY   from generalcontrol " . $_SESSION[filtro] . " group by 1";
+                              $gquery = "select puname `UP`, sum(d_foto) FOTO, sum(d_resppreguntas) RESP_PREGUNTAS, sum(d_hacepreguntas) HACE_PREGUNTAS, sum(d_cuentafamcomuni) CUENTA_FAM_COMUNI, sum(d_mencionaproyectos) MENCIONA_PROY   from generalcontrol where date_format(duebefore,'%Y-%m')='$_SESSION[mes]' group by 1";
                               $pattern="'#6699cc','#ff8c42','#ff3c38','#a23e48','#fff275'";
                               $data=_SERIAL($gquery, "UP", "", 0);
                               _CHART($data[0], $data[1], "UP", "bar", $pattern);
@@ -159,7 +158,7 @@ include 'header.php';
 <br>
 <div class="row">
       <div class="col-md-12">
-            <div class="panel panel-danger">
+            <div class="panel panel-primary">
                   <div class="panel-heading">
                         <h3 class="panel-title"><span class="glyphicon glyphicon-paperclip"></span>
                               QUIEN ESCRIBE LA CARTA
@@ -171,14 +170,14 @@ include 'header.php';
                               <h4 class="text-center"><strong>QUIEN ESCRIBE LA CARTA</strong></h4>
                               <table class="table table-condensed table-hover table-striped table-bordered">
                                     <?php
-                                    echo _TCONTENT(_CROSS("select puname `UP`, c_quienescribiocarta from generalcontrol  " . $_SESSION[filtro], "UP", "c_quienescribiocarta", 1));
+                                    echo _TCONTENT(_CROSS("select puname `UP`, c_quienescribiocarta from generalcontrol  where date_format(duebefore,'%Y-%m')='$_SESSION[mes]'", "UP", "c_quienescribiocarta", 1));
                                     ?>
                               </table>
                         </div>
                         <div class="col-md-4">
                               <h4 class="text-center"><strong>QUIEN ESCRIBE LA CARTA</strong></h4>
                               <?php
-                              $gquery = "select puname `UP`, c_quienescribiocarta from generalcontrol " . $_SESSION[filtro];
+                              $gquery = "select puname `UP`, c_quienescribiocarta from generalcontrol where date_format(duebefore,'%Y-%m')='$_SESSION[mes]'";
                               $pattern="'#4d9de0','#e15554','#e1bc29','#3bb273','#7768ae'";
                               $data=_SERIAL($gquery, "UP", "c_quienescribiocarta", 1);
                               _CHART($data[0], $data[1], "UP", "bar", $pattern);
@@ -188,7 +187,7 @@ include 'header.php';
                         <div class="col-md-4">
                               <h4 class="text-center"><strong>CONTENIDO INAPROPIADO</strong></h4>
                               <?php
-                              $gquery = "select puname `UP`, i_contenidoinaprop from generalcontrol " . $_SESSION[filtro];
+                              $gquery = "select puname `UP`, i_contenidoinaprop from generalcontrol where date_format(duebefore,'%Y-%m')='$_SESSION[mes]'";
                               $pattern="'#541388','#d90368','#f1e9da','#2e294e','#ffd400'";
                               $data=_SERIAL($gquery, "UP", "i_contenidoinaprop", 1);
                               _CHART($data[0], $data[1], "UP", "bar", $pattern);
@@ -198,7 +197,7 @@ include 'header.php';
                               <h4 class="text-center"><strong>CONTENIDO INAPROPIADO</strong></h4>
                               <table class="table table-condensed table-hover table-striped table-bordered">
                                     <?php
-                                    echo _TCONTENT(_CROSS("select puname `UP`, i_contenidoinaprop from generalcontrol  " . $_SESSION[filtro], "UP", "i_contenidoinaprop", 1));
+                                    echo _TCONTENT(_CROSS("select puname `UP`, i_contenidoinaprop from generalcontrol  where date_format(duebefore,'%Y-%m')='$_SESSION[mes]'", "UP", "i_contenidoinaprop", 1));
                                     ?>
                               </table>
                         </div>
@@ -210,7 +209,7 @@ include 'header.php';
 <br>
 <div class="row">
       <div class="col-md-12">
-            <div class="panel panel-info">
+            <div class="panel panel-primary">
                   <div class="panel-heading">
                         <h3 class="panel-title"><span class="glyphicon glyphicon-paperclip"></span>
                               REPORTE FACILITADOR
@@ -230,7 +229,7 @@ include 'header.php';
                                     <h4><span class="glyphicon glyphicon-paperclip"></span><?php echo strtoupper($row1[puname])?> </h4>
                                     <table class="table table-condensed table-hover table-striped table-bordered table-responsive">
                                           <?php
-                                          echo _TCONTENT(_CROSS("select left(facilita,20) FDC, est from generalcomms " . $_SESSION[filtro] . " and puname='" . $row1[puname] . "'", "FDC", "est", 1));
+                                          echo _TCONTENT(_CROSS("select left(facilita,20) FDC, est from generalcomms where date_format(duebefore,'%Y-%m')='$_SESSION[mes]' and puname='" . $row1[puname] . "'", "FDC", "est", 1));
                                           ?>
                                     </table>
                                     <br>

@@ -81,9 +81,9 @@ include 'header.php';
 
 
 <div class="col-xs-12 col-md-12">
-      <div class="panel panel-default">
+      <div class="panel panel-primary">
             <div class="panel-heading">
-                  <p><span class="glyphicon glyphicon-file" aria-hidden="true"></span>REGISTRO COMUNICACIÓN</p>
+                  <h3 class="panel-title"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>REGISTRO COMUNICACIÓN</h3>
             </div>
             <div class="panel-body">
                   <div class="col-md-5">
@@ -95,16 +95,16 @@ include 'header.php';
                                           </tr>
                                     </thead>
                                     <tbody>
-                                          <tr><td><span class="glyphicon glyphicon-paperclip text-muted"></span>SC:</td><td><?php echo $row[sc] ?></td></tr>
-                                          <tr><td><span class="glyphicon glyphicon-paperclip text-muted"></span>NOMBRE:</td><td><?php echo $row[scname] ?></td></tr>
-                                          <tr><td><span class="glyphicon glyphicon-paperclip text-muted"></span>EDAD:</td><td><?php echo $row[scage] ?></td></tr>
-                                          <tr><td><span class="glyphicon glyphicon-paperclip text-muted"></span>ON:</td><td><?php echo $row[no] ?></td></tr>
-                                          <tr><td><span class="glyphicon glyphicon-paperclip text-muted"></span>SP:</td><td><?php echo $row[sp] ?></td></tr>
-                                          <tr><td><span class="glyphicon glyphicon-paperclip text-muted"></span>NOMBRE:</td><td><?php echo $row[spname] ?></td></tr>
-                                          <tr><td><span class="glyphicon glyphicon-paperclip text-muted"></span>COM:</td><td><?php echo $row[comtype] ?></td></tr>
-                                          <tr><td><span class="glyphicon glyphicon-paperclip text-muted"></span>COMENT:</td><td><?php echo $row[comments] ?></td></tr>
-                                          <tr><td><span class="glyphicon glyphicon-paperclip text-muted"></span>UP:</td><td><?php echo $row[puname] ?></td></tr>
-                                          <tr><td><span class="glyphicon glyphicon-paperclip text-muted"></span>FACILITA:</td><td><?php echo $row[facilita] ?></td></tr>
+                                          <tr><td><span class="glyphicon glyphicon-paperclip text-muted"></span>SC:</td><td><?php echo $row['sc'] ?></td></tr>
+                                          <tr><td><span class="glyphicon glyphicon-paperclip text-muted"></span>NOMBRE:</td><td><?php echo $row['scname'] ?></td></tr>
+                                          <tr><td><span class="glyphicon glyphicon-paperclip text-muted"></span>EDAD:</td><td><?php echo $row['scage'] ?></td></tr>
+                                          <tr><td><span class="glyphicon glyphicon-paperclip text-muted"></span>ON:</td><td><?php echo $row['no'] ?></td></tr>
+                                          <tr><td><span class="glyphicon glyphicon-paperclip text-muted"></span>SP:</td><td><?php echo $row['sp'] ?></td></tr>
+                                          <tr><td><span class="glyphicon glyphicon-paperclip text-muted"></span>NOMBRE:</td><td><?php echo $row['spname'] ?></td></tr>
+                                          <tr><td><span class="glyphicon glyphicon-paperclip text-muted"></span>COM:</td><td><?php echo $row['comtype'] ?></td></tr>
+                                          <tr><td><span class="glyphicon glyphicon-paperclip text-muted"></span>COMENT:</td><td><?php echo $row['comments'] ?></td></tr>
+                                          <tr><td><span class="glyphicon glyphicon-paperclip text-muted"></span>UP:</td><td><?php echo $row['puname'] ?></td></tr>
+                                          <tr><td><span class="glyphicon glyphicon-paperclip text-muted"></span>FACILITA:</td><td><?php echo $row['facilita'] ?></td></tr>
                                     </tbody>
                               </table>
                         </div>
@@ -113,29 +113,29 @@ include 'header.php';
                                     <div class="form-group">
                                           <div class="col-xs-3">
                                                 <label for="pu">UP:</label>
-                                                <input type="text" class="form-control input-sm" name="pu" value="<?php echo $row[pu]; ?>" required="required" readonly>
+                                                <input type="text" class="form-control input-sm" name="pu" value="<?php echo $row['pu']; ?>" required="required" readonly>
                                           </div>
                                           <div class="col-xs-3">
                                                 <label for="sc">SC:</label>
-                                                <input type="text" class="form-control input-sm" name="sc" value="<?php echo $row[sc]; ?>" required="required" readonly>
+                                                <input type="text" class="form-control input-sm" name="sc" value="<?php echo $row['sc']; ?>" required="required" readonly>
                                           </div>
                                           <div class="col-xs-6">
                                                 <label for="scname">NOMBRE SC:</label>
-                                                <input type="text" class="form-control input-sm" name="scname" value="<?php echo $row[scname]; ?>" required="required" readonly>
+                                                <input type="text" class="form-control input-sm" name="scname" value="<?php echo $row['scname']; ?>" required="required" readonly>
                                           </div>
                                     </div>
                                     <div class="form-group">
                                           <div class="col-xs-3">
                                                 <label for="comtype">COM:</label>
-                                                <input type="text" class="form-control input-sm" name="comtype" value="<?php echo $row[comtype]; ?>" required="required" readonly>
+                                                <input type="text" class="form-control input-sm" name="comtype" value="<?php echo $row['comtype']; ?>" required="required" readonly>
                                           </div>
                                           <div class="col-xs-3">
                                                 <label for="no">ON:</label>
-                                                <input type="text" class="form-control input-sm" name="no" value="<?php echo $row[no]; ?>" required="required" readonly>
+                                                <input type="text" class="form-control input-sm" name="no" value="<?php echo $row['no']; ?>" required="required" readonly>
                                           </div>
                                           <div class="col-xs-3">
                                                 <label for="duebefore">VENCE CD:</label>
-                                                <input type="date" class="form-control input-sm" name="duebefore" value="<?php echo $row[duebefore]; ?>" required="required" readonly>
+                                                <input type="date" class="form-control input-sm" name="duebefore" value="<?php echo $row['duebefore']; ?>" required="required" readonly>
                                           </div>
                                           <div class="col-xs-3">
                                                 <label for="fechaua">REC UA:</label>
@@ -148,10 +148,10 @@ include 'header.php';
                                                 <label for="c_quienescribiocarta">QUIÉN ESCRIBIÓ LA CARTA:</label>
                                                 <select class="form-control input-sm" name="c_quienescribiocarta" required="required">
                                                       <option value="" selected>selecciona</option>
-                                                      <option value="SC" <?php echo ($row[c_quienescribiocarta] == 'SC' ? "selected" : "") ?>>SC</option>
-                                                      <option value="FAMILIAR" <?php echo ($row[c_quienescribiocarta] == 'FAMILIAR' ? "selected" : "") ?>>FAMILIAR</option>
-                                                      <option value="FACILITADOR" <?php echo ($row[c_quienescribiocarta] == 'FACILITADOR' ? "selected" : "") ?>>FACILITADOR</option>
-                                                      <option value="VOLUNTARIO" <?php echo ($row[c_quienescribiocarta] == 'VOLUNTARIO' ? "selected" : "") ?>>VOLUNTARIO</option>
+                                                      <option value="SC" <?php echo ($row['c_quienescribiocarta'] == 'SC' ? "selected" : "") ?>>SC</option>
+                                                      <option value="FAMILIAR" <?php echo ($row['c_quienescribiocarta'] == 'FAMILIAR' ? "selected" : "") ?>>FAMILIAR</option>
+                                                      <option value="FACILITADOR" <?php echo ($row['c_quienescribiocarta'] == 'FACILITADOR' ? "selected" : "") ?>>FACILITADOR</option>
+                                                      <option value="VOLUNTARIO" <?php echo ($row['c_quienescribiocarta'] == 'VOLUNTARIO' ? "selected" : "") ?>>VOLUNTARIO</option>
                                                 </select>
 
                                           </div>
@@ -159,7 +159,7 @@ include 'header.php';
                                                 <label for="i_contenidoinaprop">CONTENIDO INAPROPIADO:</label>
                                                 <select class="form-control input-sm" name="i_contenidoinaprop" required="required">
                                                       <option value="0" selected>NO</option>
-                                                      <option value="1" <?php echo ($row[i_contenidoinaprop] == '1' ? "selected" : "") ?>>SI</option>
+                                                      <option value="1" <?php echo ($row['i_contenidoinaprop'] == '1' ? "selected" : "") ?>>SI</option>
                                                 </select>
                                           </div>
                                     </div>
@@ -227,4 +227,4 @@ include 'header.php';
 
 
 
-      <?php include 'footer'; ?>
+      <?php include 'footer.php'; ?>

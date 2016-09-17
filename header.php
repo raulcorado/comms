@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php
+// ini_set('display_errors',1);
 include 'app/mivar.php';
 include 'fnc/functions.php';
 ?>
@@ -68,9 +69,9 @@ include 'fnc/functions.php';
                                           <ul class="dropdown-menu">
                                                 <!-- <li><a href="#"><span class="glyphicon glyphicon-file" aria-hidden="true"> </span>06</a></li>
                                                 <li><a href="#"><span class="glyphicon glyphicon-file" aria-hidden="true"> </span>07</a></li> -->
-                                                <li><a href="c08"><span class="glyphicon glyphicon-file text-danger" aria-hidden="true"> </span>08 CARTAS</a></li>
-                                                <!-- <li><a href="#"><span class="glyphicon glyphicon-file" aria-hidden="true"> </span>09</a></li>
-                                                <li><a href="#"><span class="glyphicon glyphicon-file" aria-hidden="true"> </span>10</a></li> -->
+                                                <li><a href="c08"><span class="glyphicon glyphicon-file text-primary" aria-hidden="true"> </span>08 CARTAS</a></li>
+                                                <!-- <li><a href="#"><span class="glyphicon glyphicon-file" aria-hidden="true"> </span>09</a></li> -->
+                                                <li><a href="c10"><span class="glyphicon glyphicon-file text-info" aria-hidden="true"> </span>10 MEDICION FWL</a></li>
 
                                           </ul>
                                     </li>
@@ -81,7 +82,7 @@ include 'fnc/functions.php';
                               </ul>
                               <ul class="nav navbar-nav navbar-right">
                                     <li class="dropdown">
-                                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span><?php echo strtoupper($_SESSION[username]) ?><span class="caret"></span></a>
+                                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span><?php echo strtoupper($_SESSION['username']) ?><span class="caret"></span></a>
                                           <ul class="dropdown-menu">
                                                 <li><a href="users"><span class="glyphicon glyphicon-user" aria-hidden="true"> </span>USUARIO</a></li>
                                                 <li role="separator" class="divider"></li>

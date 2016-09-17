@@ -1,13 +1,61 @@
 <?php
 
-function _AUT($roles, $groups) {
-      $permit=4;
+function _PERMITG($grupo) {
+      // Verifica el ID rol del usuario y lo compara con el parametro
+      // utilizar despues del include header
+      // 1 administradores
+      // 2 operadoresua
+      // 3 tecnicos
+      // 4 gerentes
+      // 5 subgerentes
+      // _PERMITG("administradores, gerentes, tecnicos");
+      $permitdos = array_map('trim',explode(",",$grupo));
+      $miembrode = array_map('trim',explode(",",$_SESSION['miembrode']));
+      $denegado=true;
+      foreach ($miembrode as $value1) {
+            if (in_array($value1, $permitdos)) {
+                  $denegado=false;
+            }
+      }
+
+      if ($denegado) {
+            ?>
+            <div class="text-info">
+                  <h4>
+                        <span class="glyphicon glyphicon-exclamation-sign"></span>
+                        Ninguna información que mostrar para su usuario
+                  </h4>
+            </div>
+
+            <?php
+            include "footer.php";
+            exit();
+      }
+}
+
+function _PERMITR($rol) {
+      $permit=$rol;
+      // Verifica el ID rol del usuario y lo compara con el parametro
+      // utilizar despues del include header
       // 1 admin
-      // 2 super user <<<<<<
+      // 2 super user
       // 3 usuario
-      // 4 visitante
+      // 4 visitante  <<<<<
+      // _PERMITR(4);
+
       if ($_SESSION[rolid]>$permit) {
-            header("Location:403");
+            ?>
+
+            <div class="text-info">
+                  <h4>
+                        <span class="glyphicon glyphicon-exclamation-sign"></span>
+                        Ninguna información que mostrar para su usuario
+                  </h4>
+            </div>
+
+            <?php
+            include "footer.php";
+            exit();
       }
 }
 

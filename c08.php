@@ -3,15 +3,6 @@ include 'secure.php';
 include 'app/connection.php';
 
 
-$permit=4;
-// 1 admin
-// 2 super user <<<<<<
-// 3 usuario
-// 4 visitante
-if ($_SESSION[rolid]>$permit) {
-      header("Location:403");
-}
-
 if (isset($_POST[enviar])) {
       $_SESSION[mes] = $_POST[mes];
       $_SESSION[filtro]="where date_format(duebefore,'%Y-%m')='$_SESSION[mes]'";
@@ -20,6 +11,11 @@ if (isset($_POST[enviar])) {
 
 include("header.php");
 
+// 1 admin
+// 2 super user
+// 3 usuario
+// 4 visitante  <<<<<
+_PERMITR(4);
 _DATATABLE('#tablatodo');
 ?>
 
@@ -67,7 +63,7 @@ _DATATABLE('#tablatodo');
                                     <?php
                                     // $queryd = "select t.*, c.fechaua, (case when (fechaua>t.duebefore) then fechaua-t.duebefore end) dias, (case when (t.duebefore-fechaua)<6 then 'RECIBIDO TARDE'  when fechaua!='' then 'RECIBIDO EN TIEMPO' when (t.duebefore-curdate())<7 then 'PENDIENTE VENCIDO' else 'PENDIENTE' end) est from c08todolist t left join c08control c on concat(t.sc,t.comtype,t.duebefore)=concat(c.sc, c.comtype, c.duebefore) "
                                     $queryd = "select * from generalcomms "
-                                    .        " $_SESSION[filtro] order by `duebefore`, `sc`";
+                                    .        " where date_format(duebefore,'%Y-%m')='$_SESSION[mes]' order by `duebefore`, `sc`";
                                     $query = "select est, count(1) total from ($queryd) g group by 1;";
                                     $result = mysqli_query($link, $query);
                                     mysqli_data_seek($result, 0);
@@ -76,10 +72,10 @@ _DATATABLE('#tablatodo');
                                           <tr>
                                                 <td>
                                                       <span class="glyphicon glyphicon-info-sign text-muted"></span>
-                                                      <?php echo $row[est] ?>
+                                                      <?php echo $row['est'] ?>
                                                 </td>
                                                 <td class="text-right">
-                                                      <?php echo $row[total] ?>
+                                                      <?php echo $row['total'] ?>
                                                 </td>
                                           </tr>
                                           <?php
@@ -92,10 +88,10 @@ _DATATABLE('#tablatodo');
       </div>
 
       <div class="col-lg-9">
-            <div class="panel panel-info">
+            <div class="panel panel-primary">
                   <div class="panel-heading">
                         <h3 class="panel-title"><span class="glyphicon glyphicon-file"></span>
-                              CARTAS DEL MES [<?php echo $_SESSION[mes]  ?>]
+                              CARTAS DEL MES [<?php echo $_SESSION['mes']  ?>]
                         </h3>
                   </div>
                   <div class="panel-body ">
@@ -117,45 +113,42 @@ _DATATABLE('#tablatodo');
                                     $result = mysqli_query($link, $queryd);
                                     mysqli_data_seek($result, 0);
                                     while ($row = mysqli_fetch_array($result)) {
-                                          if ($row[est]=="RECIBIDO TARDE") {
+                                          if ($row['est']=="RECIBIDO TARDE") {
                                                 $class_due="class='text-warning'";
                                                 $class_ua="class='text-warning'";
-                                                $class_icon="class='glyphicon glyphicon-ok text-warning'";
-                                          } elseif ($row[est]=="RECIBIDO EN TIEMPO") {
+                                                $class_icon="class='glyphicon glyphicon-check text-warning'";
+                                          } elseif ($row['est']=="RECIBIDO EN TIEMPO") {
                                                 $class_due="class='text-success'";
                                                 $class_ua="class='text-success'";
-                                                $class_icon="class='glyphicon glyphicon-ok text-success'";
-                                          } elseif ($row[est]=="PENDIENTE VENCIDO") {
+                                                $class_icon="class='glyphicon glyphicon-check text-success'";
+                                          } elseif ($row['est']=="PENDIENTE VENCIDO") {
                                                 $class_due="class='text-danger'";
                                                 $class_ua="class='text-danger'";
-                                                $class_icon="class='glyphicon glyphicon-pencil text-muted'";
+                                                $class_icon="class='glyphicon glyphicon-unchecked text-muted'";
                                           } else {
                                                 $class_due="";
                                                 $class_ua="";
-                                                $class_icon="class='glyphicon glyphicon-pencil text-muted'";
+                                                $class_icon="class='glyphicon glyphicon-unchecked text-muted'";
                                           }
-
-
-
                                           ?>
                                           <tr>
                                                 <td>
                                                       <span class="glyphicon glyphicon-file text-muted"></span>
-                                                      <?php echo $row[sc] ?>
+                                                      <?php echo $row['sc'] ?>
                                                 </td>
-                                                <td><?php echo $row[comtype] ?></td>
-                                                <td><?php echo $row[pu] ?></td>
-                                                <td><?php echo $row[scname] ?></td>
+                                                <td><?php echo $row['comtype'] ?></td>
+                                                <td><?php echo $row['pu'] ?></td>
+                                                <td><?php echo $row['scname'] ?></td>
                                                 <td <?php echo "$class_ua"; ?>>
-                                                      <?php echo $row[fechaua] ?>
+                                                      <?php echo $row['fechaua'] ?>
                                                 </td>
                                                 <td <?php echo "$class_due"; ?>>
-                                                      <?php echo $row[dueua] ?>
+                                                      <?php echo $row['dueua'] ?>
                                                 </td>
                                                 <td <?php echo "$class_ua"; ?>>
-                                                      <?php echo $row[est] ?></td>
+                                                      <?php echo $row['est'] ?></td>
                                                       <td>
-                                                            <a href="c08reg?idcomp=<?php echo $row[sc] . $row[comtype].$row[duebefore]?>" data-toggle="tooltip" data-placement="top" title="EDITAR">
+                                                            <a href="c08reg?idcomp=<?php echo $row['sc'] . $row['comtype'].$row['duebefore']?>" data-toggle="tooltip" data-placement="top" title="EDITAR">
                                                                   <span <?php echo "$class_icon"?>></span>
                                                             </a>
                                                       </td>

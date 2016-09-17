@@ -36,6 +36,7 @@ if (isset($_SESSION['login_status']) == TRUE) {
             $_SESSION['email'] = $row['email'];
             $_SESSION['deptoid'] = $row['deptoid'];
             $_SESSION['depto'] = $row['depto'];
+            $_SESSION['miembrode'] = $row['miembrode'];  //al momento string. despues debe convertirse en un array
             $_SESSION['email'] = $row['email'];
             $_SESSION['rolid'] = $row['rolid'];  //3= admin
             $_SESSION['mes'] = date('Y-m');
