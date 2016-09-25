@@ -12,12 +12,13 @@ if (isset($_POST[enviar])) {
 
 
 include 'header.php';
+_PERMITG("comm08");
 ?>
 
-<!-- <h1>Cuadro de mando</h1>
-<h4>CARTAS</h4>
-<hr> -->
-<div class="col-xs-2 col-xs-offset-10">
+<h1>Control de correspondencia</h1>
+<h4>Cuadro de mando</h4>
+
+<div class="col-xs-2">
       <form role="form" action="c08dashboard" method="post"  class="form-horizontal">
             <div class="form-group">
                   <label for="enviar">MES:</label>

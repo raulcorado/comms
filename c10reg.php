@@ -61,6 +61,8 @@ _PERMITG("comm10");
 ?>
 
 
+<h1>Control de FWL</h1>
+<h4>Control de FWL</h4>
 
 <div class="col-xs-12 col-md-12">
       <div class="panel panel-info">

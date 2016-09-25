@@ -30,13 +30,16 @@ if (isset($_POST['enviar'])) {
           </head>
           <body>
 
-          <h4>".MIAPP."</h4>
+          <h4>APLICACIÓN ".MIAPP."</h4>
+          <p></p>
+          <p>Se ha recibido una solicitud de nueva contraseña para tu cuenta.</p>
+          <p>Podrás entrar a la aplicacion utilizando los datos abajo.</p>
           <p></p>
           <p>Usuario: $username</p>
           <p>Contraseña: <font color='red'> $password</font></p>
-          <h4>Por seguridad cambia tu contraseña en las opciones del programa</h4>
+          <h4>Por seguridad cambia tu contraseña en las opciones del programa o bien generando una nueva contraseña</h4>
           <p></p>
-          <p><a href='http://10.32.36.14/".strtolower(MIAPP)."'>Entrar a ".MIAPP."</a></p>
+          <p><a href='http://10.32.36.14/".strtolower(MIAPP)."'>Puedes entrar ahora mismo a la aplicación ".MIAPP."</a></p>
 
           </body>
           </html>

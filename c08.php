@@ -15,9 +15,11 @@ include("header.php");
 // 2 super user
 // 3 usuario
 // 4 visitante  <<<<<
-_PERMITR(4);
+_PERMITG("comm08");
 _DATATABLE('#tablatodo');
 ?>
+<h1>Control de correspondencia</h1>
+<h4>Control de correspondencia</h4>
 
 <div class="row">
       <div class="col-lg-3">

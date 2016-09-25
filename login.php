@@ -35,12 +35,13 @@ if (isset($_SESSION['login_status']) == TRUE) {
             $_SESSION['nombrecomp'] = $row['nombrecomp'];
             $_SESSION['email'] = $row['email'];
             $_SESSION['deptoid'] = $row['deptoid'];
-            $_SESSION['depto'] = $row['depto'];
+            $_SESSION['depto'] = $row['depto'];   //3013 3014 3015 etc
             $_SESSION['miembrode'] = $row['miembrode'];  //al momento string. despues debe convertirse en un array
+            $_SESSION['miembroup'] = "'" . str_replace(",", "','", $row['miembroup']) . "'";
             $_SESSION['email'] = $row['email'];
             $_SESSION['rolid'] = $row['rolid'];  //3= admin
             $_SESSION['mes'] = date('Y-m');
-            $_SESSION[filtro]="where date_format(duebefore,'%Y-%m')='" . date('Y-m') . "'";
+            $_SESSION['fy'] = "2017"; // probar (date('m')<'04') ? date('Y-04-01',strtotime('-1 year')) : date('Y-04-01');
 
             $query = "update susua set ultimologin=current_timestamp, logins=logins+1 where (username='$username')";
             mysqli_query($link, $query);
@@ -92,7 +93,7 @@ include 'header.php';
                               </form>
                               <hr />
                               <small>
-                                    <p><a href="usersrp"><span class="glyphicon glyphicon-repeat" aria-hidden="true">  </span>Olvidé mi contraseña?</a></p>
+                                    <p><a href="usersrp"><span class="glyphicon glyphicon-repeat" aria-hidden="true">  </span>Solicitar nueva contraseña?</a></p>
                                     <!-- <p><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true">  </span>Registrarme como usuario NUEVO</a></p> -->
                               </small>
 

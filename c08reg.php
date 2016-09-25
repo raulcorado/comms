@@ -2,16 +2,6 @@
 include 'secure.php';
 include 'app/connection.php';
 
-$permit=3;
-// 1 admin
-// 2 super user <<<<<<
-// 3 usuario
-// 4 visitante
-if ($_SESSION[rolid]>$permit) {
-      header("Location:403");
-}
-
-
 if (isset($_POST[enviar])) {
       $p_dibujo = (isset($_POST[p_dibujo]) ? 1 : 0);
       $p_carta = (isset($_POST[p_carta]) ? 1 : 0);
@@ -76,9 +66,12 @@ if (isset($_GET[idcomp])) {
 }
 
 include 'header.php';
+_PERMITR(3);
 ?>
 
 
+<h1>Control de correspondencia</h1>
+<h4>Control de correspondencia</h4>
 
 <div class="col-xs-12 col-md-12">
       <div class="panel panel-primary">

@@ -49,7 +49,7 @@ include 'fnc/functions.php';
                                     <span class="icon-bar"></span>
                                     <span class="icon-bar"></span>
                               </button>
-                              <a class="navbar-brand" href="./"> <strong> <?php echo MIAPP ?></strong></a>
+                              <a class="navbar-brand" href="./"><strong> <?php echo MIAPP ?></strong></a>
                         </div>
 
                         <div id="navbar" class="navbar-collapse collapse">
@@ -57,11 +57,11 @@ include 'fnc/functions.php';
                                     <li class="dropdown">
                                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>PROGRAMAS<span class="caret"></span></a>
                                           <ul class="dropdown-menu">
-                                                <!-- <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"> </span>01</a></li>
-                                                <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"> </span>02</a></li>
-                                                <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"> </span>03</a></li>
-                                                <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"> </span>04</a></li>
-                                                <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"> </span>05</a></li> -->
+                                                <!-- <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"> </span>01</a></li> -->
+                                                <li><a href="c02"><span class="glyphicon glyphicon-home" aria-hidden="true"> </span>02 BENEFICIOS PROGRAMAS</a></li>
+                                                <!-- <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"> </span>03</a></li> -->
+                                                <!-- <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"> </span>04</a></li> -->
+                                                <!-- <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"> </span>05</a></li> -->
                                           </ul>
                                     </li>
                                     <li class="dropdown">
@@ -75,7 +75,7 @@ include 'fnc/functions.php';
 
                                           </ul>
                                     </li>
-                                    <li><a href="c08dashboard"><span class="glyphicon glyphicon-stats" aria-hidden="true"> </span>CUADRO DE MANDO</a></li>
+                                    <!-- <li><a href="c08dashboard"><span class="glyphicon glyphicon-stats" aria-hidden="true"> </span>CUADRO DE MANDO</a></li> -->
 
 
 
@@ -93,9 +93,7 @@ include 'fnc/functions.php';
                         </div>
                   </div>
             </nav>
-
-            <a href="./"><img src="img/logo.png" width="200px" alt=""/></a>
-
-            <br>
-            <br>
-            <br>
+            <div class="container-fluid">
+                  <br>
+                  <a href="./"><img src="img/logo.png" width="180px" alt=""/></a>
+                  <hr>

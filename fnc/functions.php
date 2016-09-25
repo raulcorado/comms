@@ -1,7 +1,7 @@
 <?php
 
 function _PERMITG($grupo) {
-      // Verifica el ID rol del usuario y lo compara con el parametro
+      // la funcion _PERMITG Verifica el ID rol del usuario y lo compara con el parametro
       // utilizar despues del include header
       // 1 administradores
       // 2 operadoresua

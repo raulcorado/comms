@@ -32,7 +32,7 @@ if (isset($_POST['agregar'])) {
       . "(username,     nombrecomp,    password,    email,   deptoid,  disabled) values "
       . "('$username', '$nombrecomp', '$password', '$email', $deptoid, $disabled)";
       $result = mysqli_query($link, $query);
-      //   echo 'QUERY ' . $query;
+      //    echo 'QUERY ' . $query;
       header("Location: users.php");
 }
 
@@ -43,62 +43,62 @@ if (isset($_POST['cambiar'])) {
 }
 include 'header.php';
 ?>
-<div class="container">
-      <div class="row">
 
-            <div class="col-xs-12 col-lg-7">
+<div class="row">
 
-                  <h1>Mantenimiento de usuarios</h1>
-                  <h4>Mantenimiento de usuarios.</h4>
+      <div class="col-xs-12 col-lg-7">
 
-                  <a href="#" data-target="#modalusuario" class="btn btn-sm btn-success" data-toggle="<?php echo ($_SESSION['rolid'] == 1 ? 'modal' : '') ?>"><span class='glyphicon glyphicon-plus'> </span>CREAR NUEVO</a>
-                  <br />
-                  <br />
-                  <div class="panel panel-default">
-                        <div class="panel-heading"><span class="glyphicon glyphicon-user" aria-hidden="true">  </span>Usuarios</div>
-                        <div class="panel-body">
-                              <table id="tablapagos" class="table table-condensed table-bordered table-hover">
-                                    <thead>
-                                          <tr>
-                                                <th align='right'>ID</th>
-                                                <th>USUARIO</th>
-                                                <!--                                <th>NOMBRE</th>-->
-                                                <th>EMAIL</th>
-                                                <th>DIS</th>
-                                                <th align='right'>LOGS</th>
-                                                <th align='right'>DIAS</th>
-                                                <th>OP</th>
-                                          </tr>
-                                    </thead>
-                                    <tbody>
-                                          <?php
-                                          $query = "select u.id, u.username, u.nombrecomp, u.email, u.disabled, u.logins, timestampdiff(day, u.ultimologin, now()) as ult from susua u"
-                                          . ($_SESSION['rolid'] == '1' ? "" : " where u.username='" . $_SESSION['username'] . "'" );
-                                          $result = mysqli_query($link, $query);
-                                          mysqli_data_seek($result, 0);
-                                          while ($row = mysqli_fetch_row($result)) {
-                                                echo"<tr>"
-                                                . "<td align='right'>$row[0]</td>"
-                                                . "<td>$row[1]</td>"
-                                                //. "<td>". utf8_encode($row[2])."</td>"
-                                                . "<td>$row[3]</td>"
-                                                . "<td>$row[4]</td>"
-                                                . "<td>$row[5]</td>"
-                                                . "<td align='right'>$row[6]</td>"
-                                                . "<td>"
-                                                . "<a href='userse.php?id=$row[0]'><span class='glyphicon glyphicon-pencil text-primary'></span></a>"
-                                                . "<a href='#'><span class='glyphicon glyphicon-remove text-danger'></span></a>"
-                                                . "</td>"
-                                                . "</tr>";
-                                          }
-                                          ?>
-                                    </tbody>
-                              </table>
-                        </div>
+            <h1>Mantenimiento de usuarios</h1>
+            <h4>Mantenimiento de usuarios.</h4>
+
+            <a href="#" data-target="#modalusuario" class="btn btn-sm btn-success" data-toggle="<?php echo ($_SESSION['rolid'] == 1 ? 'modal' : '') ?>"><span class='glyphicon glyphicon-plus'> </span>CREAR NUEVO</a>
+            <br />
+            <br />
+            <div class="panel panel-default">
+                  <div class="panel-heading"><span class="glyphicon glyphicon-user" aria-hidden="true">  </span>Usuarios</div>
+                  <div class="panel-body">
+                        <table id="tablapagos" class="table table-condensed table-bordered table-hover">
+                              <thead>
+                                    <tr>
+                                          <th align='right'>ID</th>
+                                          <th>USUARIO</th>
+                                          <!--                                <th>NOMBRE</th>-->
+                                          <th>EMAIL</th>
+                                          <th>DIS</th>
+                                          <th align='right'>LOGS</th>
+                                          <th align='right'>DIAS</th>
+                                          <th>OP</th>
+                                    </tr>
+                              </thead>
+                              <tbody>
+                                    <?php
+                                    $query = "select u.id, u.username, u.nombrecomp, u.email, u.disabled, u.logins, timestampdiff(day, u.ultimologin, now()) as ult from susua u"
+                                    . ($_SESSION['rolid'] == '1' ? "" : " where u.username='" . $_SESSION['username'] . "'" );
+                                    $result = mysqli_query($link, $query);
+                                    mysqli_data_seek($result, 0);
+                                    while ($row = mysqli_fetch_row($result)) {
+                                          echo"<tr>"
+                                          . "<td align='right'>$row[0]</td>"
+                                          . "<td>$row[1]</td>"
+                                          //. "<td>". utf8_encode($row[2])."</td>"
+                                          . "<td>$row[3]</td>"
+                                          . "<td>$row[4]</td>"
+                                          . "<td>$row[5]</td>"
+                                          . "<td align='right'>$row[6]</td>"
+                                          . "<td>"
+                                          . "<a href='userse.php?id=$row[0]'><span class='glyphicon glyphicon-pencil text-primary'></span></a>"
+                                          . "<a href='#'><span class='glyphicon glyphicon-remove text-danger'></span></a>"
+                                          . "</td>"
+                                          . "</tr>";
+                                    }
+                                    ?>
+                              </tbody>
+                        </table>
                   </div>
             </div>
       </div>
 </div>
+
 
 
 
@@ -189,4 +189,4 @@ include 'header.php';
       </div>
 </div>
 
-<?php include 'footer'; ?>
+<?php include 'footer.php'; ?>

@@ -20,6 +20,8 @@ _PERMITG("comm10");
 _DATATABLE('#tablac10');
 ?>
 
+<h1>Control de FWL</h1>
+<h4>Control de FWL</h4>
 
 <div class="row">
      <div class="col-lg-3">
@@ -82,7 +84,7 @@ _DATATABLE('#tablac10');
                          </thead>
                          <tbody>
                               <?php
-                              $queryd = "select * from general10scactive"
+                              $queryd = "select * from general10scactive "
                               .        " where `mes`='$_SESSION[mes]'";
                               $result = mysqli_query($link, $queryd);
                               mysqli_data_seek($result, 0);
