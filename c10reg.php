@@ -18,21 +18,21 @@ if (isset($_POST[enviar])) {
 
 
 // ELIMINAR REGISTRO
-if (isset($_GET[delete])) {
-      $permit=2;
-      // 1 admin
-      // 2 super user <<<<<<
-      // 3 usuario
-      // 4 visitante
-      if ($_SESSION[rolid]>$permit) {
-            header("Location:403");
-      }
-      $query = "DELETE FROM `c08todolist` WHERE concat(sc,comtype,duebefore)='$_GET[delete]'";
-      $result = mysqli_query($link, $query);
-      $query = "DELETE FROM `c08control` WHERE concat(sc,comtype,duebefore)='$_GET[delete]'";
-      $result = mysqli_query($link, $query);
-      header("Location:c08");
-}
+// if (isset($_GET[delete])) {
+//       $permit=2;
+//       // 1 admin
+//       // 2 super user <<<<<<
+//       // 3 usuario
+//       // 4 visitante
+//       if ($_SESSION[rolid]>$permit) {
+//             header("Location:403");
+//       }
+//       $query = "DELETE FROM `c08todolist` WHERE concat(sc,comtype,duebefore)='$_GET[delete]'";
+//       $result = mysqli_query($link, $query);
+//       $query = "DELETE FROM `c08control` WHERE concat(sc,comtype,duebefore)='$_GET[delete]'";
+//       $result = mysqli_query($link, $query);
+//       header("Location:c08");
+// }
 
 
 if (isset($_GET[sc])) {

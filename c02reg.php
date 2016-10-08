@@ -34,19 +34,19 @@ if (isset($_POST[enviar])) {
 if (isset($_GET[comm])) {
      // $query = "select t.*, fechaua, p_participosc, p_dibujo, p_carta, p_huella, c_quienescribiocarta, d_dialogovalioso, d_foto, d_resppreguntas, d_hacepreguntas, d_cuentafamcomuni, d_mencionaproyectos, i_contenidoinaprop from c08todolist t left join c08control c on concat(t.sc,t.comtype,t.duebefore)=concat(c.sc, c.comtype, c.duebefore) "
      // . " where concat(t.sc,t.comtype,t.duebefore)='$_GET[idcomp]'";
-     $query = "select * from general02list where (`locationtagid`='$_GET[comm]') and (`pucod`='$_SESSION[depto]')";
+     $query = "select * from general02list where (`locationtagid`='$_GET[comm]') and (`pucod` in ($_SESSION[miembroup]))";
      $result = mysqli_query($link, $query);
      $row_cnt = mysqli_num_rows($result);
      $row = mysqli_fetch_array($result);
      // echo "$query";
 
-     $query = "select * from general02list where (`locationtagid`='$_GET[comm]') and (`fy`='2016') and (`pucod`='$_SESSION[depto]')";
+     $query = "select * from general02list where (`locationtagid`='$_GET[comm]') and (`fy`='2016') and (`pucod` in ($_SESSION[miembroup]))";
      $result1 = mysqli_query($link, $query);
      $row_cnt1 = mysqli_num_rows($result1);
      $row1 = mysqli_fetch_array($result1);
      // echo "$query";
 
-     $query = "select * from general02list where (`locationtagid`='$_GET[comm]') and (`fy`='2017') and (`pucod`='$_SESSION[depto]')";
+     $query = "select * from general02list where (`locationtagid`='$_GET[comm]') and (`fy`='2017') and (`pucod` in ($_SESSION[miembroup]))";
      $result2 = mysqli_query($link, $query);
      $row_cnt2 = mysqli_num_rows($result2);
      $row2 = mysqli_fetch_array($result2);

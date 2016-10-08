@@ -20,7 +20,7 @@ _DATATABLE('#tablac02');
 ?>
 <h1>Monitoreo de proyectos</h1>
 <h4>Monitoreo de proyectos de la comunidad</h4>
-<a href="#" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Cuadro de mando"><span class="glyphicon glyphicon-stats"></span>ESTATUS</a>
+<a href="c02dashboard" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Cuadro de mando"><span class="glyphicon glyphicon-stats"></span>ESTATUS</a>
 <a href="#" class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top" title="Exportar a Excel"><span class="glyphicon glyphicon-print"></span>EXPORTAR</a>
 <br><br>
 
@@ -40,7 +40,8 @@ _DATATABLE('#tablac02');
                               <th>AREA</th>
 
                               <th>COMUNIDAD</th>
-                              <th>FECHA REG</th>
+                              <th>FY16</th>
+                              <th>FY17</th>
                               <th></th>
 
                         </tr>
@@ -54,10 +55,15 @@ _DATATABLE('#tablac02');
                         $result = mysqli_query($link, $queryd);
                         mysqli_data_seek($result, 0);
                         while ($row = mysqli_fetch_array($result)) {
-                              if (isset($row['fechareg'])) {
-                                    $class_icon="class='glyphicon glyphicon-check text-success'";
+                              if (($row['fy16'])>0) {
+                                    $class_icon16="class='glyphicon glyphicon-ok text-muted'";
                               } else {
-                                    $class_icon="class='glyphicon glyphicon-unchecked text-muted'";
+                                    $class_icon16="class='glyphicon glyphicon-option-horizontal text-muted'";
+                              }
+                              if (($row['fy17'])>0) {
+                                    $class_icon17="class='glyphicon glyphicon-ok text-muted'";
+                              } else {
+                                    $class_icon17="class='glyphicon glyphicon-option-horizontal text-muted'";
                               }
 
                               ?>
@@ -69,10 +75,11 @@ _DATATABLE('#tablac02');
                                     </td>
                                     <td><?php echo $row['areaname'] ?></td>
                                     <td><?php echo $row['comname'] ?></td>
-                                    <td><?php echo $row['fechareg'] ?></td>
+                                    <td class="text-muted"><span <?php echo $class_icon16 ?>></span><?php echo $row['fy16'] ?></td>
+                                    <td class="text-muted"><span <?php echo $class_icon17 ?>></span><?php echo $row['fy17'] ?></td>
                                     <td>
-                                          <a href="c02reg?comm=<?php echo $row['locationtagid']?>" data-toggle="tooltip" data-placement="top" title="EDITAR">
-                                                <span <?php echo "$class_icon"?>></span>
+                                          <a href="c02reg?comm=<?php echo $row['locationtagid']?>" data-toggle="tooltip" data-placement="top" title="EDITAR" >
+                                                <span class="glyphicon glyphicon-edit text-primary"></span>
                                           </a>
                                     </td>
 

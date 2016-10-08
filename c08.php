@@ -36,7 +36,7 @@ _DATATABLE('#tablatodo');
                         <hr>
                         <form role="form" action="c08" method="post"  class="form-horizontal">
                               <label for="enviar">MES:</label>
-                              <div class="input-group">
+                              <div class="input-group has-success">
                                     <select class="form-control input-sm" name="mes" required="required">
                                           <?php
                                           $query = "select date_format(duebefore,'%Y-%m') mes from c08todolist group by 1 order by 1";
@@ -48,7 +48,7 @@ _DATATABLE('#tablatodo');
                                           ?>
                                     </select>
                                     <span class="input-group-btn">
-                                          <button type="submit" name="enviar" class="btn btn-sm btn-danger" type="button"><span class='glyphicon glyphicon-ok'></span></button>
+                                          <button type="submit" name="enviar" class="btn btn-sm input-sm btn-success" type="button"><span class='glyphicon glyphicon-refresh'></span></button>
                                     </span>
                               </div>
                         </form>

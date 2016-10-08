@@ -32,13 +32,13 @@ _DATATABLE('#tablac10');
                     </h3>
                </div>
                <div class="panel-body ">
-                    <a href="#" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Cuadro de mando"><span class="glyphicon glyphicon-stats"></span></a>
+                    <a href="c10dashboard" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Cuadro de mando"><span class="glyphicon glyphicon-stats"></span></a>
                     <a href="#" class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top" title="Reportes"><span class="glyphicon glyphicon-print"></span></a>
                     <hr>
                     <form role="form" action="c10" method="post"  class="form-horizontal">
                          <label for="enviar">MES:</label>
                          <div class="input-group">
-                              <select class="form-control input-sm" name="mes" required="required">
+                              <select class="form-control input-sm info" name="mes" required="required">
                                    <?php
                                    echo "<option value='' >seleccione</option>";
                                    $mes = date("Y-m",strtotime("-1 Months"));
@@ -50,7 +50,7 @@ _DATATABLE('#tablac10');
                                    ?>
                               </select>
                               <span class="input-group-btn">
-                                   <button type="submit" name="enviar" class="btn btn-sm btn-danger" type="button"><span class='glyphicon glyphicon-ok'></span></button>
+                                   <button type="submit" name="enviar" class="btn btn-sm input-sm btn-info" type="button"><span class='glyphicon glyphicon-refresh'></span></button>
                               </span>
                          </div>
                     </form>
@@ -85,7 +85,7 @@ _DATATABLE('#tablac10');
                          <tbody>
                               <?php
                               $queryd = "select * from general10scactive "
-                              .        " where `mes`='$_SESSION[mes]'";
+                              .        " where `mes`='$_SESSION[mes]'";                              
                               $result = mysqli_query($link, $queryd);
                               mysqli_data_seek($result, 0);
                               while ($row = mysqli_fetch_array($result)) {

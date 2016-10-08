@@ -5,7 +5,7 @@ and open the template in the editor.
 */
 /*
 Created on : Jul 17, 2016, 1:33:17 PM
-Author     : raul
+Author     : raul@plan
 */
 
 @-webkit-keyframes aaa {
@@ -41,7 +41,7 @@ Author     : raul
 
 body {
       padding-top: 80px;
-      /*    background-color: #f2f2f2;   */      
+      /*    background-color: #f2f2f2;   */
 }
 
 .glyphicon {
@@ -101,4 +101,14 @@ body {
 
 .c3-chart-arcs {
       stroke-width: 0px;
+}
+
+.lid {
+      width: 30px;
+      height: 30px;
+      border-radius: 2px;
+      font-size: 18px;
+      line-height: 30px;
+      overflow: hidden;
+      text-align: center;
 }

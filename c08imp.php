@@ -261,7 +261,9 @@ if (isset($_POST['submitsc'])) {
             . "$('#mybarsc').text('100%');"
             . "$('#asc').text('Procesados con exito:$s.    Con error:$e');"
             . "</script>";
-
+            //COMPROMISO 10 recargará los SC que cumplen años a la tabla c10control
+            $query="insert ignore into c10control (scnumber, nocode, spnumber, spname, dob, age) select sscnumber, snocode, sspnumber, sspname, sdob, edad from general10scactive ";
+            $result = mysqli_query($link, $query);
       }
 }
 

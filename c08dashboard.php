@@ -22,7 +22,7 @@ _PERMITG("comm08");
       <form role="form" action="c08dashboard" method="post"  class="form-horizontal">
             <div class="form-group">
                   <label for="enviar">MES:</label>
-                  <div class="input-group">
+                  <div class="input-group has-success">
                         <select class="form-control input-sm" name="mes" required="required">
                               <?php
                               $query = "select date_format(duebefore,'%Y-%m') mes from c08todolist group by 1 order by 1";
@@ -35,7 +35,7 @@ _PERMITG("comm08");
                         </select>
                         <span class="input-group-btn">
                               <label for="enviar">YYYY-MM</label>
-                              <button type="submit" name="enviar" class="btn btn-sm btn-success" type="button"><span class='glyphicon glyphicon-ok'></span></button>
+                              <button type="submit" name="enviar" class="btn btn-sm input-sm btn-success" type="button"><span class='glyphicon glyphicon-refresh'></span></button>
                         </span>
                   </div>
             </div>
@@ -49,10 +49,9 @@ _PERMITG("comm08");
                         <h3 class="panel-title"><span class="glyphicon glyphicon-paperclip"></span>
                               ESTATUS DE CARTAS
                         </h3>
-
                   </div>
                   <div class="panel-body">
-                        <div class="col-md-6">
+                        <div class="col-md-6">                           
                               <h4 class="text-center"><strong>ESTATUS DE CARTAS</strong></h4>
                               <table class="table table-condensed table-hover table-striped table-bordered">
                                     <?php
