@@ -1,6 +1,7 @@
 <?php
 include 'secure.php';
 include 'app/connection.php';
+include 'fnc/functions.php';
 
 
 
@@ -10,13 +11,7 @@ if (isset($_POST[enviar])) {
      header("Location:c10");
 }
 include("header.php");
-
-// 1 administradores
-// 2 operadoresua
-// 3 tecnicos
-// 4 gerentes
-// 5 subgerentes
-_PERMITG("comm10");
+_PERMITG("comm10a,comm10p,comm10u,comm10v");
 _DATATABLE('#tablac10');
 ?>
 
@@ -41,11 +36,12 @@ _DATATABLE('#tablac10');
                               <select class="form-control input-sm info" name="mes" required="required">
                                    <?php
                                    echo "<option value='' >seleccione</option>";
-                                   $mes = date("Y-m",strtotime("-1 Months"));
-                                   echo "<option value='" . $mes . "' " . ($mes == $_SESSION[mes] ? "selected" : "") . ">" . $mes . "</option>";
+                                   
                                    $mes = date("Y-m",strtotime("-0 Months"));
                                    echo "<option value='" . $mes . "' " . ($mes == $_SESSION[mes] ? "selected" : "") . ">" . $mes . "</option>";
                                    $mes = date("Y-m",strtotime("+1 Months"));
+                                   echo "<option value='" . $mes . "' " . ($mes == $_SESSION[mes] ? "selected" : "") . ">" . $mes . "</option>";
+                                   $mes = date("Y-m",strtotime("+2 Months"));
                                    echo "<option value='" . $mes . "' " . ($mes == $_SESSION[mes] ? "selected" : "") . ">" . $mes . "</option>";
                                    ?>
                               </select>
@@ -85,7 +81,7 @@ _DATATABLE('#tablac10');
                          <tbody>
                               <?php
                               $queryd = "select * from general10scactive "
-                              .        " where `mes`='$_SESSION[mes]'";                              
+                              .        " where `mes`='$_SESSION[mes]'";
                               $result = mysqli_query($link, $queryd);
                               mysqli_data_seek($result, 0);
                               while ($row = mysqli_fetch_array($result)) {

@@ -2,9 +2,10 @@
 <?php
 include 'secure.php';
 include 'app/connection.php';
+include 'fnc/functions.php';
 
 include 'header.php';
-_PERMITG("comm10");
+_PERMITG("comm10a,comm10p,comm10u,comm10v");
 ?>
 
 <h1>Control de calidad de cartas FWL</h1>

@@ -2,6 +2,7 @@
 // include 'secure.php';
 include 'app/mivar.php';
 include 'app/connection.php';
+include 'fnc/functions.php';
 
 
 if (isset($_POST['enviar'])) {

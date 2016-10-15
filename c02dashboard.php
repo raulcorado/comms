@@ -2,9 +2,10 @@
 <?php
 include 'secure.php';
 include 'app/connection.php';
+include 'fnc/functions.php';
 
 include 'header.php';
-_PERMITG("comm02");
+_PERMITG("comm02a,comm02p,comm02u,comm02v");
 ?>
 
 <h1>Control de beneficiarios</h1>

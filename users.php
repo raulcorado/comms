@@ -1,19 +1,10 @@
 <?php
 include 'secure.php';
 include 'app/connection.php';
-
-$permit=1;
-// 1 admin
-// 2 super user <<<<<<
-// 3 usuario
-// 4 visitante
-if ($_SESSION[rolid]>$permit) {
-      header("Location:403");
-}
-
-
+include 'fnc/functions.php';
 
 if (isset($_POST['agregar'])) {
+     _PERMITG("admin");
       $userid = $_SESSION['userid'];
       $username = $_POST['username'];
       $nombrecomp = $_POST['nombrecomp'];
@@ -42,6 +33,7 @@ if (isset($_POST['cambiar'])) {
       header("Location: userprofile.php");
 }
 include 'header.php';
+_PERMITG("admin");
 ?>
 
 <div class="row">

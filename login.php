@@ -36,7 +36,11 @@ if (isset($_SESSION['login_status']) == TRUE) {
             $_SESSION['email'] = $row['email'];
             $_SESSION['deptoid'] = $row['deptoid'];
             $_SESSION['depto'] = $row['depto'];   //3013 3014 3015 etc
-            $_SESSION['miembrode'] = $row['miembrode'];  //al momento string. despues debe convertirse en un array
+
+            //al momento string. despues debe convertirse en un array
+            $_SESSION['miembrode'] = $row['miembrode'];
+
+            //lista de ups separadas por coma. despues puede aplicarse `pucod` in ($_SESSION[miembroup])
             $_SESSION['miembroup'] = "'" . str_replace(",", "','", $row['miembroup']) . "'";
             $_SESSION['email'] = $row['email'];
             $_SESSION['rolid'] = $row['rolid'];  //3= admin

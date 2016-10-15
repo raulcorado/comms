@@ -1,10 +1,12 @@
 <?php
 include 'secure.php';
 include 'app/connection.php';
+include 'fnc/functions.php';
 
 
 
 if (isset($_POST[enviar])) {
+_PERMITG("comm02a,comm02p,comm02u");
      $fields = "";
      $values1 = "";
      $values2 = "";
@@ -54,7 +56,7 @@ if (isset($_GET[comm])) {
 }
 
 include 'header.php';
-_PERMITG("comm02");
+_PERMITG("comm02a,comm02p,comm02u,comm02v");
 
 
 

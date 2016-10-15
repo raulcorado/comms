@@ -230,6 +230,7 @@ function _TCONTENT($gquery) {
                }
                else {
                     $gi="<td class='text-right'>";
+                    //total row include?
                }
                $data = $data . $gi . $row[$i] . "</td>";
           }
@@ -296,7 +297,7 @@ function _CHART($data, $groups, $field1, $type, $pattern) {
                     width: 480
                },
                label: {
-                    format: function (v, id, i, j) {return ((id*100)|0) +'% ['+v+']'; },
+                    format: function (v, id, i, j) {return ((id*100)|0) +'% ='+v+''; },
                }
           },
 

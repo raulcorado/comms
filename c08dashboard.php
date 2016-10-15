@@ -2,6 +2,7 @@
 <?php
 include 'secure.php';
 include 'app/connection.php';
+include 'fnc/functions.php';
 
 
 
@@ -12,7 +13,7 @@ if (isset($_POST[enviar])) {
 
 
 include 'header.php';
-_PERMITG("comm08");
+_PERMITG("comm08a,comm08p,comm08u,comm08v");
 ?>
 
 <h1>Control de correspondencia</h1>
@@ -51,7 +52,7 @@ _PERMITG("comm08");
                         </h3>
                   </div>
                   <div class="panel-body">
-                        <div class="col-md-6">                           
+                        <div class="col-md-6">
                               <h4 class="text-center"><strong>ESTATUS DE CARTAS</strong></h4>
                               <table class="table table-condensed table-hover table-striped table-bordered">
                                     <?php

@@ -2,7 +2,6 @@
 <?php
 // ini_set('display_errors',1);
 include 'app/mivar.php';
-include 'fnc/functions.php';
 ?>
 <html>
 <head>
@@ -59,9 +58,9 @@ include 'fnc/functions.php';
                                    <ul class="dropdown-menu">
                                         <li class="divider"></li>
                                         <!-- <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"> </span>01</a></li> -->
-                                        <li><a href="c02"><span class="glyphicon glyphicon-home" aria-hidden="true"> </span>02-BENEFICIOS PROGRAMAS</a></li>
-
-                                        <!-- <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"> </span>03</a></li> -->
+                                        <li><a href="c02"><span class="glyphicon glyphicon-check" aria-hidden="true"> </span>02-BENEFICIOS DE UN PROGRAMA</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="c03"><span class="glyphicon glyphicon-check" aria-hidden="true"> </span>03-BOLETA RI</a></li>
                                         <!-- <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"> </span>04</a></li> -->
                                         <!-- <li><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"> </span>05</a></li> -->
                                         <li class="divider"></li>
@@ -70,15 +69,17 @@ include 'fnc/functions.php';
                               <li class="dropdown">
                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>PATROCINIO<span class="caret"></span></a>
                                    <ul class="dropdown-menu">
-                                        <!-- <li><a href="#"><span class="glyphicon glyphicon-file" aria-hidden="true"> </span>06</a></li>
-                                        <li><a href="#"><span class="glyphicon glyphicon-file" aria-hidden="true"> </span>07</a></li> -->
-                                        <li class="divider"></li>
-                                        <li><a href="c08"><span class="glyphicon glyphicon-file" aria-hidden="true"> </span>08-CARTAS</a></li>
-
-                                        <li class="divider"></li>
-                                        <!-- <li><a href="#"><span class="glyphicon glyphicon-file" aria-hidden="true"> </span>09</a></li> -->
-                                        <li><a href="c10"><span class="glyphicon glyphicon-file" aria-hidden="true"> </span>10-MEDICION FWL</a></li>
-                                        <li class="divider"></li>
+                                        <!-- <li class="divider"></li> -->
+                                        <li><a href="#"><span class="glyphicon glyphicon-unchecked" aria-hidden="true"> </span>06-CARTA DE BIENVENIDA</a></li>
+                                        <!-- <li class="divider"></li> -->
+                                        <li><a href="#"><span class="glyphicon glyphicon-unchecked" aria-hidden="true"> </span>07-INTERCAMBIO DE CARTAS</a></li>
+                                        <!-- <li class="divider"></li> -->
+                                        <li><a href="c08"><span class="glyphicon glyphicon-check" aria-hidden="true"> </span>08-CONTENIDO DE CALIDAD DE CARTAS</a></li>
+                                        <!-- <li class="divider"></li> -->
+                                        <li><a href="#"><span class="glyphicon glyphicon-unchecked" aria-hidden="true"> </span>09-ACTUALIZACION SCI SCU</a></li>
+                                        <!-- <li class="divider"></li> -->
+                                        <li><a href="c10"><span class="glyphicon glyphicon-check" aria-hidden="true"> </span>10-CARTA DE DESPEDIDA FWL</a></li>
+                                        <!-- <li class="divider"></li> -->
 
                                    </ul>
                               </li>
@@ -88,7 +89,7 @@ include 'fnc/functions.php';
 
                          </ul>
                          <ul class="nav navbar-nav navbar-right">
-                              <li class="dropdown">
+                              <!-- <li class="dropdown">
                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>CUADRO DE MANDO<span class="caret"></span></a>
                                    <ul class="dropdown-menu">
                                         <li class="divider"></li>
@@ -99,7 +100,7 @@ include 'fnc/functions.php';
 
                                         <li class="divider"></li>
                                    </ul>
-                              </li>
+                              </li> -->
                               <li class="dropdown">
 
                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span><?php echo strtoupper($_SESSION['username']) ?><span class="caret"></span></a>
