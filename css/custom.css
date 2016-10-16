@@ -9,65 +9,68 @@ Author     : raul@plan
 */
 
 @-webkit-keyframes aaa {
-      from {
-            -webkit-transform: translate3d(-100%, 0, 0);
-            transform: translate3d(-100%, 0, 0);
-            visibility: visible;
-      }
+     from {
+          -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+          visibility: visible;
+     }
 
-      to {
-            -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-      }
+     to {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+     }
 }
 
 @keyframes aaa {
-      from {
-            -webkit-transform: translate3d(-100%, 0, 0);
-            transform: translate3d(-100%, 0, 0);
-            visibility: visible;
-      }
-      to {
-            -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-      }
+     from {
+          -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+          visibility: visible;
+     }
+     to {
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+     }
 }
 
 .panel {
-      /*animation-name: aaa;
-      animation-fill-mode: both;
-      animation-duration: .3s;*/
+     /*animation-name: aaa;
+     animation-fill-mode: both;
+     animation-duration: .3s;*/
 }
 
 body {
-      padding-top: 80px;
-      /*    background-color: #f2f2f2;   */
+     padding-top: 80px;
+     /*    background-color: #f2f2f2;   */
 }
 
 .glyphicon {
-      padding-right: 8px;
+     padding-right: 8px;
 }
 
 .nav-tabs {
-      border-bottom: none;
-      padding-bottom: -10px;
+     border-bottom: none;
+     padding-bottom: -10px;
 }
 
 .panel-default {
-      box-shadow: 0px 30px 80px black;
-      /*border-color: #999999;*/
+     /*box-shadow: 0px 30px 80px black;*/
+     border-color: #999999;
+}
+.panel-default > .panel-heading {
+     /*color: #ffffff;*/
+     background-color: #e6e6e6;
 }
 
 .panel {
-      border-width: 2px;
+     border-width: 2px;
 }
-
 .panel-heading {
-      border-radius: 0px;
+     border-radius: 0px;
 }
 
 .form-control, .btn, .panel, .alert {
-      border-radius: 2px;
+     border-radius: 2px;
 }
 
 .table-condensed > thead > tr > th,
@@ -76,40 +79,43 @@ body {
 .table-condensed > thead > tr > td,
 .table-condensed > tbody > tr > td,
 .table-condensed > tfoot > tr > td {
-      padding: 2px;
-      font-size: 12px;
+     padding: 2px;
+     font-size: 12px;
 }
 
 .table-condensed > thead > tr > th,
 .table-condensed > tfoot > tr > th,
 .table-condensed > thead > tr > td,
 .table-condensed > tfoot > tr > td {
-      background-color:  #e6e6e6;
-      padding: 4px;
+     background-color:  #e6e6e6;
+     padding: 4px;
 }
 
 .nowrap > tbody > tr > td{
-      white-space: nowrap;
+     white-space: nowrap;
 }
 .tab-pane {
-      padding-top: 10px;
+     padding-top: 10px;
 }
 
 .c3-chart-arcs-title{
-      font-size-adjust: inherit;
+     font-size-adjust: inherit;
 }
 
 .c3-chart-arcs {
-      stroke-width: 0px;
+     stroke-width: 0px;
 }
 
+.c3-legend-item {
+     font-size:10px;
+}
 
 .lid {
-      width: 30px;
-      height: 30px;
-      border-radius: 2px;
-      font-size: 18px;
-      line-height: 30px;
-      overflow: hidden;
-      text-align: center;
+     width: 30px;
+     height: 30px;
+     border-radius: 2px;
+     font-size: 18px;
+     line-height: 30px;
+     overflow: hidden;
+     text-align: center;
 }

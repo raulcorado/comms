@@ -313,7 +313,9 @@ function _CHART($data, $groups, $field1, $type, $pattern) {
                     height: 240,
                     width: 480
                },
+
                label: {
+                     threshold: 0.01,
                     // format: function (v, id, i, j) {return ((id*100)|0) +'% '; },
                     // format: function (v, id, i, j) {return ((id*100)|0) +'% '+(v|0)+''; },
                }

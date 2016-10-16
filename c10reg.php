@@ -67,7 +67,7 @@ _PERMITG("comm10a,comm10p,comm10u,comm10v");
 <h4>Control de FWL</h4>
 
 <div class="col-xs-12 col-md-12">
-     <div class="panel panel-info">
+     <div class="panel panel-default">
           <div class="panel-heading">
                <h3 class="panel-title"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>FWL</h3>
           </div>

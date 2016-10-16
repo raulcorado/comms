@@ -45,7 +45,7 @@ _PERMITG("comm07a,comm07p,comm07u,comm07v");
 
 <div class="row">
      <div class="col-md-12">
-          <div class="panel panel-primary">
+          <div class="panel panel-default">
                <div class="panel-heading">
                     <h3 class="panel-title"><span class="glyphicon glyphicon-paperclip"></span>
                          INTERCAMBIO DE COMUNICACIONES
@@ -96,7 +96,7 @@ while ($rowd = mysqli_fetch_array($resultu)) {
      <br>
      <div class="row">
           <div class="col-md-12">
-               <div class="panel panel-primary">
+               <div class="panel panel-default">
                     <!-- <div class="panel-heading">
                          <h3 class="panel-title"><span class="glyphicon glyphicon-paperclip"></span>
                               INTERCAMBIO DE COMUNICACIONES

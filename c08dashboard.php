@@ -45,7 +45,7 @@ _PERMITG("comm08a,comm08p,comm08u,comm08v");
 
 <div class="row">
       <div class="col-md-12">
-            <div class="panel panel-primary">
+            <div class="panel panel-default">
                   <div class="panel-heading">
                         <h3 class="panel-title"><span class="glyphicon glyphicon-paperclip"></span>
                               ESTATUS DE CARTAS
@@ -78,7 +78,7 @@ _PERMITG("comm08a,comm08p,comm08u,comm08v");
 
 <div class="row">
       <div class="col-md-12">
-            <div class="panel panel-primary">
+            <div class="panel panel-default">
                   <div class="panel-heading">
                         <h3 class="panel-title"><span class="glyphicon glyphicon-paperclip"></span>
                               PARTICIPACION DEL SC
@@ -118,7 +118,7 @@ _PERMITG("comm08a,comm08p,comm08u,comm08v");
 
 <div class="row">
       <div class="col-md-12">
-            <div class="panel panel-primary">
+            <div class="panel panel-default">
                   <div class="panel-heading">
                         <h3 class="panel-title"><span class="glyphicon glyphicon-paperclip"></span>
                               DIALOGO VALIOSO
@@ -159,7 +159,7 @@ _PERMITG("comm08a,comm08p,comm08u,comm08v");
 <br>
 <div class="row">
       <div class="col-md-12">
-            <div class="panel panel-primary">
+            <div class="panel panel-default">
                   <div class="panel-heading">
                         <h3 class="panel-title"><span class="glyphicon glyphicon-paperclip"></span>
                               QUIEN ESCRIBE LA CARTA
@@ -210,7 +210,7 @@ _PERMITG("comm08a,comm08p,comm08u,comm08v");
 <br>
 <div class="row">
       <div class="col-md-12">
-            <div class="panel panel-primary">
+            <div class="panel panel-default">
                   <div class="panel-heading">
                         <h3 class="panel-title"><span class="glyphicon glyphicon-paperclip"></span>
                               REPORTE FACILITADOR

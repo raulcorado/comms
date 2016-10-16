@@ -77,7 +77,7 @@ $areas = array(
 <h4>Monitoreo de proyectos de la comunidad</h4>
 
 
-<div class="panel panel-danger">
+<div class="panel panel-default">
      <div class="panel-heading">
           <h3 class="panel-title"><span class="glyphicon glyphicon-th" aria-hidden="true"></span>MONITOREO DE LA COMUNIDAD</h3>
      </div>

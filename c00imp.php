@@ -15,7 +15,7 @@ _PERMITG("comm08a,comm08p");
 
 <div class="row">
      <div class="col-md-3">
-          <div class="panel panel-primary">
+          <div class="panel panel-default">
                <div class="panel-heading">
                     <p class="panel-title"><span class="glyphicon glyphicon-import" aria-hidden="true"></span><strong>TO-DO</strong> : semanal</p>
                </div>
@@ -41,7 +41,7 @@ _PERMITG("comm08a,comm08p");
      </div>
 
      <div class="col-md-3">
-          <div class="panel panel-info">
+          <div class="panel panel-default">
                <div class="panel-heading">
                     <p class="panel-title"><span class="glyphicon glyphicon-import" aria-hidden="true"></span><strong>SC ACTIVE</strong> : semestral </p>
                </div>
@@ -67,7 +67,7 @@ _PERMITG("comm08a,comm08p");
      </div>
 
      <div class="col-md-3">
-          <div class="panel panel-warning">
+          <div class="panel panel-default">
                <div class="panel-heading">
                     <p class="panel-title"><span class="glyphicon glyphicon-import" aria-hidden="true"></span><strong>LOCATION</strong> : anual </p>
                </div>
@@ -103,7 +103,7 @@ _PERMITG("comm08a,comm08p");
 
 
      <div class="col-md-3">
-          <div class="panel panel-warning">
+          <div class="panel panel-default">
                <div class="panel-heading">
                     <p class="panel-title"><span class="glyphicon glyphicon-import" aria-hidden="true"></span><strong>R PROD</strong> : mensual </p>
                </div>

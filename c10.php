@@ -20,7 +20,7 @@ _DATATABLE('#tablac10');
 
 <div class="row">
      <div class="col-lg-3">
-          <div class="panel panel-info">
+          <div class="panel panel-default">
                <div class="panel-heading">
                     <h3 class="panel-title">
                          OPCIONES
@@ -58,7 +58,7 @@ _DATATABLE('#tablac10');
      </div>
 
      <div class="col-lg-9">
-          <div class="panel panel-info">
+          <div class="panel panel-default">
                <div class="panel-heading">
                     <h3 class="panel-title"><span class="glyphicon glyphicon-file"></span>
                          FWL [<?php echo $_SESSION['mes']  ?>]

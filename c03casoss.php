@@ -106,7 +106,7 @@ $(document).ready(function () {
 
 
                <div class="col-xs-8">
-                    <div class="panel panel-warning">
+                    <div class="panel panel-default">
                          <div class="panel-heading"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>SEGUIMIENTO</div>
                          <div class="panel-body">
 
@@ -192,7 +192,7 @@ $(document).ready(function () {
                     </div>
 
                     <div class="col-xs-4">
-                         <div class="panel panel-warning">
+                         <div class="panel panel-default">
                               <div class="panel-heading"><span class="glyphicon glyphicon-paperclip" aria-hidden="true"></span>DATOS DEL CASO</div>
                               <div class="panel-body">
                                    <table class="table table-condensed table-hover">

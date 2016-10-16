@@ -69,7 +69,7 @@ _PERMITG("comm08a,comm08p,comm08u,comm08v");
 <h4>Control de correspondencia</h4>
 
 <div class="col-xs-12 col-md-12">
-     <div class="panel panel-primary">
+     <div class="panel panel-default">
           <div class="panel-heading">
                <h3 class="panel-title"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>REGISTRO COMUNICACIÓN</h3>
           </div>

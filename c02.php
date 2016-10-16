@@ -19,7 +19,7 @@ _DATATABLE('#tablac02');
 <a href="#" class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top" title="Exportar a Excel"><span class="glyphicon glyphicon-print"></span>EXPORTAR</a>
 <br><br>
 
-<div class="panel panel-danger">
+<div class="panel panel-default">
      <div class="panel-heading">
           <h3 class="panel-title"><span class="glyphicon glyphicon-th"></span>
                MONITOREO DE PROYECTOS EN LA COMUNIDAD

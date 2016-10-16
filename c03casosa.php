@@ -167,7 +167,7 @@ _PERMITG("comm03a,comm03p,comm03u,comm03v");
      <div class="row">
           <div class="col-xs-12">
                <h1>Casos</h1>
-               <div class="panel panel-warning">
+               <div class="panel panel-default">
                     <div class="panel-heading"><span class="glyphicon glyphicon-paperclip" aria-hidden="true">  </span></div>
                     <div class="panel-body">
                          <form role="form" action="c03casosa" method="post" class="form-horizontal" id="frmpago">
@@ -214,7 +214,7 @@ _PERMITG("comm03a,comm03p,comm03u,comm03v");
 
 
 
-                    <div class="panel panel-warning">
+                    <div class="panel panel-danger">
                          <div class="panel-heading"   >
                               <ul class="nav nav-tabs">
                                    <li class="active"><a aria-expanded="true" href="#2" data-toggle="tab" class="btn btn-default">1. NUTRICION</a></li>

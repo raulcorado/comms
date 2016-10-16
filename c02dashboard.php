@@ -15,7 +15,7 @@ _PERMITG("comm02a,comm02p,comm02u,comm02v");
 
 <div class="row">
       <div class="col-md-12">
-            <div class="panel panel-danger">
+            <div class="panel panel-default">
                   <div class="panel-heading">
                         <h3 class="panel-title"><span class="glyphicon glyphicon-paperclip"></span>
                               ESTATUS DE UP FY 2016
@@ -59,7 +59,7 @@ _PERMITG("comm02a,comm02p,comm02u,comm02v");
 <br>
 <div class="row">
       <div class="col-md-12">
-            <div class="panel panel-danger">
+            <div class="panel panel-default">
                   <div class="panel-heading">
                         <h3 class="panel-title"><span class="glyphicon glyphicon-paperclip"></span>
                               ESTATUS DE UP FY 2017

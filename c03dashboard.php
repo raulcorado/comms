@@ -235,7 +235,7 @@ _PERMITG("comm03a,comm03p,comm03u,comm03v");
           <a href="c03dashboard" class="btn btn-xs btn-warning" data-toggle="tooltip" data-placement="top" title="Quitar filtro"><span class='glyphicon glyphicon-asterisk'> </span>LIMPIAR</a>
      </div>
      <br>
-     <div class="panel panel-warning">
+     <div class="panel panel-default">
           <div class="panel-heading">
                <p><span class="glyphicon glyphicon-info-sign"></span>Información General</p>
           </div>
@@ -287,7 +287,7 @@ $resultu = mysqli_query($link, $queryu);
 mysqli_data_seek($resultu, 0);
 while ($rowd = mysqli_fetch_array($resultu)) {
      ?>
-     <div class="panel panel-warning">
+     <div class="panel panel-default">
           <div class="panel-body">
                <div class="row">
                     <div class="col-md-6 col-md-offset-3">

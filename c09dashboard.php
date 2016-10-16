@@ -45,7 +45,7 @@ _PERMITG("comm09a,comm09p,comm09u,comm09v");
 
 <div class="row">
      <div class="col-md-12">
-          <div class="panel panel-primary">
+          <div class="panel panel-default">
                <div class="panel-heading">
                     <h3 class="panel-title"><span class="glyphicon glyphicon-paperclip"></span>
                          CARTAS DE BIENVENIDA
@@ -96,7 +96,7 @@ while ($rowd = mysqli_fetch_array($resultu)) {
      <br>
      <div class="row">
           <div class="col-md-12">
-               <div class="panel panel-primary">
+               <div class="panel panel-default">
                     <!-- <div class="panel-heading">
                          <h3 class="panel-title"><span class="glyphicon glyphicon-paperclip"></span>
                               CARTAS DE BIENVENIDA

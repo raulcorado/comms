@@ -28,7 +28,7 @@ _DATATABLE('#tablatodo');
 </div>
 <div class="row">
      <div class="col-md-6">
-          <div class="panel panel-primary">
+          <div class="panel panel-default">
                <div class="panel-heading">
                     <h3 class="panel-title"><span class="glyphicon glyphicon-file"></span>
                          INTERCAMBIO DE COMUNICACIONES

@@ -34,6 +34,7 @@ if (isset($_POST['cambiar'])) {
 }
 include 'header.php';
 _PERMITG("admin");
+_DATATABLE('#tablausers');
 ?>
 
 <div class="row">
@@ -49,7 +50,7 @@ _PERMITG("admin");
             <div class="panel panel-default">
                   <div class="panel-heading"><span class="glyphicon glyphicon-user" aria-hidden="true">  </span>Usuarios</div>
                   <div class="panel-body">
-                        <table id="tablapagos" class="table table-condensed table-bordered table-hover">
+                        <table id="tablausers" class="table table-condensed table-bordered table-hover">
                               <thead>
                                     <tr>
                                           <th align='right'>ID</th>

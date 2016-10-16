@@ -9,48 +9,21 @@ if (isset($_GET[msg])) {
 }
 include 'header.php';
 _PERMITG("comm03a,comm03p,comm03u,comm03v");
+_DATATABLE('#tablacasos');
 ?>
 
 
 
 <style type="text/css">
 #panel{
-     display: none
+     display: none;
 }
 </style>
 
 <script type="text/javascript">
-
 $(window).load(function () {
      $("#waiting").hide();
      $("#panel").show();
-});
-
-$(document).ready(function () {
-     $('#tablacasos').DataTable({
-          "paging": true,
-          "lengthMenu": [[50, 100, 500, -1], [50, 100, 500, "TODOS"]],
-          "pageLength": 100,
-          //     "order": [[0, "desc"]],
-          // "scrollX": true,
-          "info": true,
-          "stateSave": true,
-          "pagingType": "full",
-          "language": {
-               "lengthMenu": "_MENU_",
-               "zeroRecords": "NADA QUE MOSTRAR",
-               "search":         "",
-               "paginate": {
-                    "first":      "PRIM",
-                    "last":       "ULTM",
-                    "next":       ">",
-                    "previous":   "<"
-               },
-               "infoEmpty": "NADA QUE MOSTRAR",
-               "info":           "DEL _START_ AL _END_ = _TOTAL_ REGISTROS",
-               "infoFiltered": "(TOTAL _MAX_ REGISTROS)"
-          },
-     });
 });
 </script>
 
@@ -74,7 +47,7 @@ $(document).ready(function () {
 
                <br>
                <br>
-               <div id="panel" class="panel panel-warning">
+               <div id="panel" class="panel panel-default">
                     <div class="panel-heading">
                          <a href="c03repFacilitador" data-toggle="tooltip" data-placement="right" title="Reporte casos ABIERTOS" ><span class="glyphicon glyphicon-print" aria-hidden="true"> </span></a>
                     </div>
