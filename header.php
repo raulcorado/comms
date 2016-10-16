@@ -70,13 +70,13 @@ include 'app/mivar.php';
                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-file" aria-hidden="true"></span>PATROCINIO<span class="caret"></span></a>
                                    <ul class="dropdown-menu">
                                         <!-- <li class="divider"></li> -->
-                                        <li><a href="#"><span class="glyphicon glyphicon-unchecked" aria-hidden="true"> </span>06-CARTA DE BIENVENIDA</a></li>
+                                        <li><a href="c06"><span class="glyphicon glyphicon-check" aria-hidden="true"> </span>06-CARTA DE BIENVENIDA</a></li>
                                         <!-- <li class="divider"></li> -->
-                                        <li><a href="#"><span class="glyphicon glyphicon-unchecked" aria-hidden="true"> </span>07-INTERCAMBIO DE CARTAS</a></li>
+                                        <li><a href="c07"><span class="glyphicon glyphicon-check" aria-hidden="true"> </span>07-INTERCAMBIO DE CARTAS</a></li>
                                         <!-- <li class="divider"></li> -->
                                         <li><a href="c08"><span class="glyphicon glyphicon-check" aria-hidden="true"> </span>08-CONTENIDO DE CALIDAD DE CARTAS</a></li>
                                         <!-- <li class="divider"></li> -->
-                                        <li><a href="#"><span class="glyphicon glyphicon-unchecked" aria-hidden="true"> </span>09-ACTUALIZACION SCI SCU</a></li>
+                                        <li><a href="c09"><span class="glyphicon glyphicon-check" aria-hidden="true"> </span>09-ACTUALIZACION SCI SCU</a></li>
                                         <!-- <li class="divider"></li> -->
                                         <li><a href="c10"><span class="glyphicon glyphicon-check" aria-hidden="true"> </span>10-CARTA DE DESPEDIDA FWL</a></li>
                                         <!-- <li class="divider"></li> -->

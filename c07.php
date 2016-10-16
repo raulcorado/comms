@@ -6,20 +6,20 @@ include 'fnc/functions.php';
 if (isset($_POST[enviar])) {
      $_SESSION[mes] = $_POST[mes];
      $_SESSION[filtro]="where date_format(duebefore,'%Y-%m')='$_SESSION[mes]'";
-     header("Location:c06");
+     header("Location:c07");
 }
 
 include("header.php");
-_PERMITG("comm06a,comm06p,comm06u,comm06v");
+_PERMITG("comm07a,comm07p,comm07u,comm07v");
 _DATATABLE('#tablatodo');
 ?>
-<h1>Carta de bienvenida</h1>
-<h4>Carta de bienvenida</h4>
+<h1>Intercambio de comunicaciones</h1>
+<h4>Intercambio de comunicaciones</h4>
 
 <div class="row">
      <div class="col-lg-3">
           <a href="c00imp" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="Importar desde CD"><span class="glyphicon glyphicon-import"></span></a>
-          <a href="c06dashboard" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Cuadro de mando"><span class="glyphicon glyphicon-stats"></span></a>
+          <a href="c07dashboard" class="btn btn-info btn-sm" data-toggle="tooltip" data-placement="top" title="Cuadro de mando"><span class="glyphicon glyphicon-stats"></span></a>
           <a href="#" class="btn btn-warning btn-sm" data-toggle="tooltip" data-placement="top" title="Reportes"><span class="glyphicon glyphicon-print"></span></a>
           <br>
           <br>
@@ -31,7 +31,7 @@ _DATATABLE('#tablatodo');
           <div class="panel panel-primary">
                <div class="panel-heading">
                     <h3 class="panel-title"><span class="glyphicon glyphicon-file"></span>
-                         CARTA DE BIENVENIDA
+                         INTERCAMBIO DE COMUNICACIONES
                     </h3>
                </div>
                <div class="panel-body ">
@@ -48,7 +48,7 @@ _DATATABLE('#tablatodo');
                          </thead>
                          <tbody>
                               <?php
-                              $queryd = "select date_format(mes,'%Y-%m') t, nombre1, sum(respuestas) respuestas, sum(detotal-respuestas) pendientes, sum(detotal) total FROM comms.general06total group by 1,2 "
+                              $queryd = "select date_format(mes,'%Y-%m') t, nombre1, sum(respuestas) respuestas, sum(detotal-respuestas) pendientes, sum(detotal) total FROM comms.general07total group by 1,2 "
                               .        " ";
                               $result = mysqli_query($link, $queryd);
                               mysqli_data_seek($result, 0);

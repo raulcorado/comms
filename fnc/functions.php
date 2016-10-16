@@ -189,7 +189,7 @@ function _SERIAL($gquery, $field1, $field2, $cross) {
      return array($data, $groups);
 }
 
-function _TCONTENT($gquery) {
+function _TCONTENT($gquery, $gtot=0) {
      /*
      convierte $gquery en una tabla sin incluir los tags <table></table>
 
@@ -207,7 +207,8 @@ function _TCONTENT($gquery) {
      $result = mysqli_query($link, $query);
      $field_cnt = mysqli_num_fields($result);
      mysqli_data_seek($result, 0);
-     $data="<thead><tr>";
+     $data = "<thead><tr>";
+     $trow = "<tfoot><tr><td>TOTAL</td>";
      $i=0;
      while ($property = mysqli_fetch_field($result)) {
           if ($i==0) {
@@ -230,13 +231,27 @@ function _TCONTENT($gquery) {
                }
                else {
                     $gi="<td class='text-right'>";
-                    //total row include?
+                    $trowv[$i]=$trowv[$i]+$row[$i];
                }
                $data = $data . $gi . $row[$i] . "</td>";
           }
           $data = $data . "</tr>";
      }
-     $data = $data . "</tbody>";
+
+
+     foreach ($trowv as $v) {
+          $trow=$trow . "<td class='text-right'>" . $v . "</td>";
+     }
+     $trow=$trow . "</tr></tfoot>";
+
+     if ($gtot==1) {
+          $data = $data . "</tbody>" . $trow;
+     }
+     else {
+          $data = $data . "</tbody>";
+     }
+
+
      return $data;
 }
 
@@ -266,7 +281,9 @@ function _CHART($data, $groups, $field1, $type, $pattern) {
                rows: <?php echo $data ?>,
                groups: [<?php echo $groups ?>],
                type: '<?php echo $type ?>',
-               order: 'desc'
+               // order: 'desc',
+               order: null,
+
           },
           grid: {
                x: {
@@ -297,7 +314,8 @@ function _CHART($data, $groups, $field1, $type, $pattern) {
                     width: 480
                },
                label: {
-                    format: function (v, id, i, j) {return ((id*100)|0) +'% ='+v+''; },
+                    // format: function (v, id, i, j) {return ((id*100)|0) +'% '; },
+                    // format: function (v, id, i, j) {return ((id*100)|0) +'% '+(v|0)+''; },
                }
           },
 

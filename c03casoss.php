@@ -227,7 +227,7 @@ $(document).ready(function () {
                                                                       <label for = "visitaacasa">ESTATUS DEL CASO:</label>
                                                                       <select class="form-control input-sm" id="idestatus" name="idestatus" required="required">
                                                                            <?php
-                                                                           $query = "select id, estatus, sel from c03estatus order by 1";
+                                                                           $query = "select id, estatus, sel from c03estatus where id <> 8 order by 1 ";
                                                                            $result = mysqli_query($link, $query);
                                                                            mysqli_data_seek($result, 0);
                                                                            while ($rowd = mysqli_fetch_row($result)) {

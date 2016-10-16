@@ -10,8 +10,8 @@ include 'fnc/functions.php';
 include 'header.php';
 _PERMITG("comm08a,comm08p");
 ?>
-<h1>Control de correspondencia</h1>
-<h4>Control de correspondencia</h4>
+<h1>Módulo de importación</h1>
+<h4>Módulo de importación</h4>
 
 <div class="row">
      <div class="col-md-3">
@@ -20,19 +20,12 @@ _PERMITG("comm08a,comm08p");
                     <p class="panel-title"><span class="glyphicon glyphicon-import" aria-hidden="true"></span><strong>TO-DO</strong> : semanal</p>
                </div>
                <div class="panel-body">
-                    <form action="c08imp" method="post" name="importar" id="form1" enctype="multipart/form-data">
+                    <form action="c00imp" method="post" name="importar" id="form1" enctype="multipart/form-data">
                          <div class="form-group">
-                              <ol>
-                                   <li>Sacar un reporte <strong>To-Do</strong> y grabarlo en formato <strong>.csv</strong></li>
-                                   <li>Selecciona el archivo</li>
-                                   <li>Importar</li>
-                              </ol>
-                              <hr />
-                              <label class="btn btn-primary" for="file">
-                                   <input name="file" id="file" type="file" >
+                              To-Do List
+                              <label class="btn btn-primary text-right" for="file">
+                                   <input name="file" id="file" type="file">
                               </label>
-                              <hr />
-                              <p class="text-info">Este proceso puede tardar algunos minutos. Presione Importar y espere el resultado</p>
                               <small id="a" class="text-info"></small>
                               <div class="progress">
                                    <div id="mybar" class="progress-bar progress-bar-info" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
@@ -53,19 +46,12 @@ _PERMITG("comm08a,comm08p");
                     <p class="panel-title"><span class="glyphicon glyphicon-import" aria-hidden="true"></span><strong>SC ACTIVE</strong> : semestral </p>
                </div>
                <div class="panel-body">
-                    <form action="c08imp" method="post" name="importar" id="form2" enctype="multipart/form-data">
+                    <form action="c00imp" method="post" name="importar" id="form2" enctype="multipart/form-data">
                          <div class="form-group">
-                              <ol>
-                                   <li>Sacar un reporte <strong>SC Active</strong> desde <a href="https://cdquery.planapps.org/DefaultWebQueryTool.aspx" target="_blank">Query-Tool</a> en formato <strong>.csv</strong></li>
-                                   <li>Selecciona el archivo</li>
-                                   <li>Importar</li>
-                              </ol>
-                              <hr />
+                              SC Act/Can Query Tool
                               <label class="btn btn-info" for="filesc">
                                    <input name="filesc" type="file" >
                               </label>
-                              <hr />
-                              <p class="text-info">Este proceso puede tardar algunos minutos. Presione Importar y espere el resultado</p>
                               <small id="asc" class="text-info"></small>
                               <div class="progress">
                                    <div id="mybarsc" class="progress-bar progress-bar-info" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
@@ -86,14 +72,8 @@ _PERMITG("comm08a,comm08p");
                     <p class="panel-title"><span class="glyphicon glyphicon-import" aria-hidden="true"></span><strong>LOCATION</strong> : anual </p>
                </div>
                <div class="panel-body">
-                    <form action="c08imp" method="post" name="importar" id="form3" enctype="multipart/form-data">
+                    <form action="c00imp" method="post" name="importar" id="form3" enctype="multipart/form-data">
                          <div class="form-group">
-                              <ol>
-                                   <li>Archivos de CD PPM EXPORT</li>
-                                   <li>LocationTag.txt</li>
-                                   <li>LocationType.txt</li>
-                              </ol>
-                              <hr>
                               Location TAG
                               <label class="btn btn-warning" for="filesc">
                                    <input name="filetag" type="file" >
@@ -111,11 +91,7 @@ _PERMITG("comm08a,comm08p");
                               <div class="progress">
                                    <div id="mybartyp" class="progress-bar progress-bar-info" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                               </div>
-                              <hr>
-                              <p class="text-info">Este proceso puede tardar algunos minutos. Presione Importar y espere el resultado</p>
-
-
-                              <div class=" text-right">
+                              <div class="text-right">
                                    <button type="submit" class="btn btn-sm btn-warning" name="submitloca"><span class='glyphicon glyphicon-import'> </span> Importar</button>
                               </div>
                          </div>
@@ -132,15 +108,19 @@ _PERMITG("comm08a,comm08p");
                     <p class="panel-title"><span class="glyphicon glyphicon-import" aria-hidden="true"></span><strong>R PROD</strong> : mensual </p>
                </div>
                <div class="panel-body">
-                    <form action="c08imp" method="post" name="importar" id="form4" enctype="multipart/form-data">
+                    <form action="c00imp" method="post" name="importar" id="form4" enctype="multipart/form-data">
                          <div class="form-group">
-                              CORRESPONDITENTE A:
+                              REPORTE DE PRODUCCIÓN
+                              <label class="btn btn-warning" for="fileprod">
+                                   <input name="fileprod" type="file" >
+                              </label>
 
-                              <div class="input-group has-success">
+                              CORRESPONDITENTE A:
+                              <div class="input-group">
                                    <select class="form-control input-sm col-md-5" name="pu" required="required">
                                         <option value='' selected>UP</option>";
                                         <?php
-                                        $query = "SELECT `PU Code`, `PU Name` FROM scactive group by 1,2 order by 1,2";
+                                        $query = "SELECT * FROM generallocationup";
                                         $result = mysqli_query($link, $query);
                                         mysqli_data_seek($result, 0);
                                         while ($rowd = mysqli_fetch_row($result)) {
@@ -167,15 +147,10 @@ _PERMITG("comm08a,comm08p");
                                    </select>
                               </div>
 
-                              <label class="btn btn-warning" for="fileprod">
-                                   <input name="fileprod" type="file" >
-                              </label>
                               <small id="prod" class="text-info"></small>
                               <div class="progress">
                                    <div id="mybarprod" class="progress-bar progress-bar-info" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
                               </div>
-                              <hr>
-                              <p class="text-info">Este proceso puede tardar algunos minutos. Presione Importar y espere el resultado</p>
                               <div class=" text-right">
                                    <button type="submit" class="btn btn-sm btn-warning" name="submitrepprod"><span class='glyphicon glyphicon-import'> </span>Importar</button>
                               </div>

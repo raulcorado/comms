@@ -45,6 +45,7 @@ if (isset($_SESSION['login_status']) == TRUE) {
             $_SESSION['email'] = $row['email'];
             $_SESSION['rolid'] = $row['rolid'];  //3= admin
             $_SESSION['mes'] = date('Y-m');
+            $_SESSION['ano'] = date('Y');
             $_SESSION['fy'] = "2017"; // probar (date('m')<'04') ? date('Y-04-01',strtotime('-1 year')) : date('Y-04-01');
 
             $query = "update susua set ultimologin=current_timestamp, logins=logins+1 where (username='$username')";

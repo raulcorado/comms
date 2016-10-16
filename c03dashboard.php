@@ -225,8 +225,8 @@ _PERMITG("comm03a,comm03p,comm03u,comm03v");
 </div>
 
 <div class="row">
-<h1>Casos Boleta de Reporte Inmediato</h1>
-<h4>Cuadro de mando</h4>
+     <h1>Casos Boleta de Reporte Inmediato</h1>
+     <h4>Cuadro de mando</h4>
 
      <div class="text-left">
           <span data-toggle="tooltip" data-placement="left" title="Definir filtro">
@@ -240,30 +240,84 @@ _PERMITG("comm03a,comm03p,comm03u,comm03v");
                <p><span class="glyphicon glyphicon-info-sign"></span>Información General</p>
           </div>
           <div class="panel-body">
-               <h4 class="text-center"><strong>TABLA GENERAL DE CASOS POR ESTATUS</strong></h4>
-               <table class="table table-condensed table-hover table-striped table-bordered">
-                    <?php
-                    echo _TCONTENT(_CROSS("select puname `UP`, estatus from general03boleta", "UP", "estatus", 1));
-                    ?>
-               </table>
+               <div class="row">
+                    <div class="col-md-12">
+                         <h4 class="text-center"><strong>TABLA GENERAL DE CASOS POR ESTATUS</strong></h4>
+                         <table class="table table-condensed table-hover table-striped table-bordered">
+                              <?php
+                              echo _TCONTENT(_CROSS("select puname `UP`, estatus from general03boleta", "UP", "estatus", 1));
+                              ?>
+                         </table>
+                         <hr>
 
-               <hr>
-               <?php
-               // SERIAL INICIO
-               $gquery = "select puname `UP`, estatus from general03boleta ";
-               $field1 = "UP";
-               $field2 = "estatus";
-               include 'fnc/serial.php';
-               // SERIAL FINAL
+                    </div>
+               </div>
+               <div class="row">
+                    <div class="col-md-9">
 
-               $id="g1";
-               include     'gbar.php';
+                         <h4 class="text-center"><strong>CANTIDAD</strong></h4>
+                         <?php
+                         $gquery = "select puname `UP`, estatus from general03boleta ";
+                         $pattern="'#50514f','#f25f5c','#ffe066','#247ba0','#70c1b3','#38aecc','#004c27','#ffad05'";
+                         $data=_SERIAL(_CROSS($gquery,"UP","estatus",0), "UP", "estatus");
+                         _CHART($data[0], $data[1], "UP", "bar", $pattern);
+                         ?>
+                    </div>
+                    <div class="col-md-3">
+                         <h4 class="text-center"><strong>% GENERAL</strong></h4>
 
+                         <?php
+                         $gquery = "select 'TOTAL', sum(case when idestatus in(2,3) then 1 end) 'RESUELTO + CERRADO VISITA', sum(1)-sum(case when idestatus in(2,3) then 1 end) 'DIFERENCIA' from general03boleta group by 1 ";
+                         $pattern="'#0b4f6c','#BEB9B5'";
+                         $data=_SERIAL($gquery,"TOTAL","RESUELTO + CERRADO VISITA");
+                         _CHART($data[0], $data[1], "TOTAL", "pie", $pattern);
+                         ?>
 
-               ?>
+                    </div>
+
+               </div>
 
           </div>
      </div>
+</div>
+</div>
+<?php
+$queryu = "select * from generallocationup";
+$resultu = mysqli_query($link, $queryu);
+mysqli_data_seek($resultu, 0);
+while ($rowd = mysqli_fetch_array($resultu)) {
+     ?>
+     <div class="panel panel-warning">
+          <div class="panel-body">
+               <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                         <h4 class="text-center"><strong><?php echo $rowd[cod1] . "-" . $rowd[nombre1]  ?></strong></h4>
+
+                         <table class="table table-condensed table-hover table-striped table-bordered">
+                              <?php
+                              echo _TCONTENT("SELECT estatus as 'ESTATUS', sum(1) as 'TOTAL' FROM general03boleta where pucode='$rowd[cod1]' group by 1", 1);
+                              ?>
+                         </table>
+                    </div>
+
+                    <div class="col-md-3">
+                         <h4 class="text-center"><strong><?php echo $rowd[cod1] . "-" . $rowd[nombre1]  ?></strong></h4>
+
+                         <?php
+                         $gquery = "select puname `UP`, sum(case when idestatus in(2,3) then 1 end) 'RESUELTO + CERRADO VISITA', sum(1)-sum(case when idestatus in(2,3) then 1 end) 'DIFERENCIA' from general03boleta where pucode='$rowd[cod1]' group by 1 ";
+                         $pattern="'#0b4f6c','#BEB9B5'";
+                         $data=_SERIAL($gquery,"UP","RESUELTO + CERRADO VISITA");
+                         _CHART($data[0], $data[1], "UP", "pie", $pattern);
+                         ?>
+                    </div>
+               </div>
+          </div>
+     </div>
+     <?php
+}
+?>
+
+
 </div>
 
 <br>
